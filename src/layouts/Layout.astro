@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Samira Alvarez</title>
+	</head>
+	<body>
+		<div class="frame">
+
+			
+		</div>
+		
+		<slot />
+	</body>
+</html>
+
+<style>
+
+	* {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+	}
+
+	html{
+		background-image: linear-gradient(#181818 2px, transparent 2px), linear-gradient(to right, #181818 2px, transparent 2px);
+		background-size: 43px 43px;
+		background-color: #141414;
+		overflow: hidden;
+	}
+
+	.frame{
+		display: grid;
+		height: 90vh;
+		margin: 50px;
+		border:1px solid #fff;
+		color:#fff;
+		font-family: "Inter", Arial, Helvetica, sans-serif;
+	}
+
+</style>
