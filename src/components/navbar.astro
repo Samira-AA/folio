@@ -4,7 +4,7 @@
 
 <nav class="menu">
     <ul>
-        <li><a>HOME</a></li>
+        <li ><a>HOME</a></li>
         <li><a>ABOUT ME</a></li>
         <li><a>PROJECTS</a></li>
         <li><a>CONTACT</a></li>
@@ -17,6 +17,7 @@
     .menu{
         display: flex;
         align-items: flex-end;
+
     }
 
 	ul{
@@ -28,7 +29,7 @@
         cursor:pointer;
     }
 
-    li:not(:last-child){
+    li{
         margin-bottom: 20px;
     }
 
@@ -64,9 +65,41 @@
 
     /* sm: 640px and below */
     @media (max-width: 639px) {
-        .menu{
-            display:flex;
+        li{
+            margin: 0px;
+            display: flex; 
+            align-items: center;
+            justify-content: center; 
+            width: 112px;
+            height: 44px;
+            font-size: 14px;
+            white-space:nowrap;
+           position:relative;
         }
+
+        
+        li:hover{
+            background-color: black;
+            
+            padding: 12px 24px;
+            border-radius: 50px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+            background-color: rgba(34, 34, 34, 0.75); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 50px;
+            width: 100%;
+            padding: 4px;
+            font-size: 18px;
+        }
+
+    
     }
 </style>
 
