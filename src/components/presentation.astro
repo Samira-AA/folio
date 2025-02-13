@@ -4,9 +4,10 @@
 </div>
   
 <style>
+    
     .presentation{
         margin-right: 80px;
-        
+        white-space:nowrap
     }
    h1, h2 {
         font-weight:lighter;
@@ -20,5 +21,63 @@
         font-size: 20px;
         margin-top: 10px;
    }
+
+   /* 2xl: 1536px and below */
+   @media (max-width: 1535px) {
+        .name{
+            font-size: 50px;
+        }
+
+        .status{
+            font-size: 30px;
+        }
+    }
+
+    /* xl: 1280px and below */
+    @media (max-width: 1279px) {
+        .presentation{
+            margin-right: 50px;
+            white-space:nowrap
+        }
+
+        .name{
+            font-size: 40px;
+        }
+
+        .status{
+            font-size: 20px;
+        }
+    }
+
+    /* 950px and below */
+    @media (max-width: 949px) {
+        .presentation{
+            margin-right: 50px;
+            white-space:nowrap
+        }
+
+        .name{
+            font-size: 35px;
+        }
+
+        .status{
+            font-size: 15px;
+        }
+    }
+
+    /* lg: 1024px and below */
+    @media (max-width: 1023px) {
+        
+    }
+
+    /* md: 768px and below */
+    @media (max-width: 767px) {
+    
+    }
+
+    /* sm: 640px and below */
+    @media (max-width: 639px) {
+    
+    }
 </style>
 

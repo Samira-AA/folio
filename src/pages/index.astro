@@ -21,12 +21,15 @@ import Layout from '../layouts/Layout.astro';
 
 <style >
    
+   
     .more-info{
         font-size: 20px;
         font-weight: 300;
         text-decoration:underline 0.5px #FD6900;
         text-underline-offset:2px;
         cursor:pointer;
+        white-space:nowrap;
+        
     }
 
     .content{
@@ -69,4 +72,82 @@ import Layout from '../layouts/Layout.astro';
         border: 0;
     }
     
+
+    /* 2xl: 1536px and below */
+   @media (max-width: 1522px) {
+        .more-info{
+           display: flex;
+           margin-top: 20px;
+            
+        }
+    }
+
+    /* xl: 1280px and below */
+    @media (max-width: 1279px) {
+        .content p{
+            font-size: 45px;
+            font-weight: bold;
+        }
+
+        .content{
+            padding: 15px;
+        }
+    }
+
+    /* lg: 1024px and below */
+    @media (max-width: 1023px) {
+        
+    }
+
+    /* 950px and below */
+    @media (max-width: 949px) {
+        .content p{
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .content{
+            padding: 15px;
+        }
+
+        button{
+            flex-wrap: wrap;
+            color:#fff;
+            padding:18px 40px;
+            border-radius:15px;
+            font-size:15px;
+            cursor:pointer;
+        }
+    }
+
+    /* 860px and below */
+    @media (max-width: 859px) {
+
+        .buttons{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        button{
+            display: flex;
+            justify-content: center;
+            color:#fff;
+            width: 150px;
+            white-space:nowrap;
+            border-radius:15px;
+            font-size:15px;
+            cursor:pointer;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* md: 768px and below */
+    @media (max-width: 767px) {
+    
+    }
+
+    /* sm: 640px and below */
+    @media (max-width: 639px) {
+    
+    }
 </style>

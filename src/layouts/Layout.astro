@@ -68,6 +68,16 @@ import Name from '../components/presentation.astro'
 		
 	}
 
+	/* sm: 640px and below */
+    @media (max-width: 639px) {
+		.frame{
+			grid-template-areas:
+			'name .'
+			'menu menu'
+			'content content';
+		}
+	}
+
 	.space{
 		grid-area: space;
 	}
@@ -95,5 +105,6 @@ import Name from '../components/presentation.astro'
     color: inherit;
     text-decoration: inherit;
     font-weight: inherit;
+	
 }
 </style>
