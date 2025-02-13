@@ -3,5 +3,70 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
+    <div class="content">
+
+        <p>Hola! I’m  a <span class="stack">FullStack</span> developer based in Lima. <a href="/about/"><span class="more-info">Read more</span></a> </p>
+            
+      
+        <div class="buttons">
+            <a href="/contact/"> <button class="contact-button">Contact Me</button> </a>
+           
+            <a href="/cv/"> <button class="download-button">Download CV</button> </a>
+           
+        </div>
+        
+    </div>
 	
 </Layout>
+
+<style >
+   
+    .more-info{
+        font-size: 20px;
+        font-weight: 300;
+        text-decoration:underline 0.5px #FD6900;
+        text-underline-offset:2px;
+        cursor:pointer;
+    }
+
+    .content{
+        padding: 20px;
+        display:flex;
+        align-items: flex-start;
+        flex-direction: column;
+       
+    }
+
+    .content p{
+        font-size: 70px;
+        font-weight: bold;
+    }
+    
+    .stack{
+        color:#10EA33;
+    }
+
+    .buttons{
+        margin-top: 60px;
+    }
+
+    button{
+        color:#fff;
+        padding:18px 40px;
+        border-radius:15px;
+        font-size:20px;
+        cursor:pointer;
+    }
+
+    .contact-button{
+        background-color: #0269F4;
+        border: 0;
+        margin-right:50px;
+    }
+
+    .download-button{
+        background-color: #E900FF;
+        border: 0;
+    }
+    
+</style>

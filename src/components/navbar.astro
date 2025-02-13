@@ -3,9 +3,30 @@
 ---
 
 <nav class="menu">
-    
+    <ul>
+        <li><a>HOME</a></li>
+        <li><a>ABOUT ME</a></li>
+        <li><a>PROJECTS</a></li>
+        <li><a>CONTACT</a></li>
+    </ul>
 </nav>
 
 <style>
-	
+    .menu{
+        display: flex;
+        align-items: flex-end;
+    }
+
+	ul{
+        list-style: none;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 0px;
+        margin: 0px;
+        cursor:pointer;
+    }
+
+    li:not(:last-child){
+        margin-bottom: 20px;
+    }
 </style>

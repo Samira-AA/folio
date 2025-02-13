@@ -1,3 +1,7 @@
+---
+import NavBar from '../components/navbar.astro'
+import Name from '../components/presentation.astro'
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,25 +9,37 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 		<title>Samira Alvarez</title>
 	</head>
 	<body>
 		<div class="frame">
+			<div class="name">
+				<Name></Name>
+			</div>
+			
+			<div class="content">
+				<slot/>
 
+			</div>
+			
+			<div class="menu">
+				<NavBar></NavBar>
+			</div>
 			
 		</div>
 		
-		<slot />
+		
 	</body>
 </html>
 
-<style>
+<style is:global>
 
 	* {
 		padding: 0;
 		margin: 0;
-		width: 100%;
-		height: 100%;
 		box-sizing: border-box;
 	}
 
@@ -41,6 +57,43 @@
 		border:1px solid #fff;
 		color:#fff;
 		font-family: "Inter", Arial, Helvetica, sans-serif;
+		padding:40px 35px;
+ 
+		grid-template-columns: auto 1fr;
+		grid-template-rows:auto 1fr auto;
+		grid-template-areas:
+		'name content'
+		'. content'
+		'menu content';
+		
 	}
 
+	.space{
+		grid-area: space;
+	}
+
+	.menu{
+		grid-area: menu;
+	}
+
+	.content{
+		grid-area:content;
+		display:flex;
+        justify-content: center;
+        align-items: center;
+	}
+	
+	.name{
+		grid-area: name;
+	}
+
+	a,
+	a:link,
+	a:visited,
+	a:hover,
+	a:active {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+}
 </style>
