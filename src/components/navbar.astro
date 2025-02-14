@@ -1,88 +1,82 @@
 ---
-
 ---
-
 <nav class="menu">
     <ul>
-        <li ><a>HOME</a></li>
-        <li><a>ABOUT ME</a></li>
+        <li><a>HOME</a></li>
+        <li><a>ABOUT</a></li>
         <li><a>PROJECTS</a></li>
         <li><a>CONTACT</a></li>
     </ul>
 </nav>
 
 <style>
-
     /* Base styles (desktop) */
-    .menu{
+    .menu {
         display: flex;
         align-items: flex-end;
-
     }
 
-	ul{
+    ul {
         list-style: none;
         font-weight: bold;
         font-size: 20px;
         padding: 0px;
         margin: 0px;
-        cursor:pointer;
+        cursor: pointer;
     }
 
-    li{
+    li {
         margin-bottom: 20px;
     }
 
-
     /* 2xl: 1536px and below */
     @media (max-width: 1535px) {
-        ul{
+        ul {
             font-size: 30px;
         }
     }
 
     /* xl: 1280px and below */
     @media (max-width: 1279px) {
-        ul{
+        ul {
             font-size: 20px;
         }
     }
 
-     /* 950px and below */
-     @media (max-width: 949px) {
-        
+    /* 950px and below */
+    @media (max-width: 949px) {
+        /* Add styles if needed */
     }
 
     /* lg: 1024px and below */
     @media (max-width: 1023px) {
-        
+        /* Add styles if needed */
     }
 
     /* md: 768px and below */
     @media (max-width: 767px) {
-    
+        /* Add styles if needed */
     }
 
     /* sm: 640px and below */
     @media (max-width: 639px) {
-        li{
+        li {
             margin: 0px;
-            display: flex; 
+            display: flex;
             align-items: center;
-            justify-content: center; 
-            width: 112px;
+            justify-content: center;
+            width: 25%; 
             height: 44px;
             font-size: 14px;
-            white-space:nowrap;
-           position:relative;
+            white-space: nowrap;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden; 
+    
         }
 
-        
-        li:hover{
+        li:hover {
             background-color: black;
-            
-            padding: 12px 24px;
-            border-radius: 50px;
         }
 
         ul {
@@ -90,16 +84,30 @@
             justify-content: space-around;
             align-items: center;
             flex-direction: row;
-            background-color: rgba(34, 34, 34, 0.75); 
-            backdrop-filter: blur(10px); 
+            background-color: rgba(34, 34, 34, 0.75);
+            backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 50px;
             width: 100%;
             padding: 4px;
             font-size: 18px;
         }
-
-    
     }
-</style>
 
+    /* 511px and below */
+    @media (max-width: 510px) {
+        li {
+            font-size: 12px;
+        }
+    }
+
+    /* 339px and below */
+    @media (max-width: 349px) {
+        li {
+            font-size: 10px; 
+            height: 35px;
+        }
+    }
+
+
+</style>
