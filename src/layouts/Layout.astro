@@ -12,6 +12,7 @@ type AlignmentType = {
 
 const alignment: AlignmentType = {
     '/': 'center',
+	'/contact/': 'center',
 } as const;
 
 const dynamicAlign= alignment[currentPage] || 'flex-end';
