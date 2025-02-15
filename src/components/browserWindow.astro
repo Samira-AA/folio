@@ -1,0 +1,84 @@
+---
+import {Icon} from 'astro-icon/components';
+---
+
+<div class="container">
+    <div class="tab-bar">
+        <div class="tab-content">
+           
+            <div class="close-button">
+                <button>
+                    <Icon name="close"></Icon>
+                </button>
+            </div>
+
+            <div class="page-name">
+                <p>ABOUT ME</p>
+            </div>
+
+            <div> </div>
+            
+        </div>
+    </div>
+
+    <div class="content-layout">
+        AAAAAAAAAAAA
+    </div>
+
+</div>
+
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        width: 75%;
+        
+    }
+
+    .tab-bar{
+        background-color: #F56F10;
+        height: 70px;
+        width: 100%;
+        border-radius: 40px 40px 0 0;
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .content-layout{
+        height: 100%;
+        width: 100%;
+        background-color: whitesmoke;
+        overflow-y: scroll;
+        color: black;
+        padding: 20px;
+    }
+
+    [data-icon]{
+        height: 45px;
+        width: 45px;
+        color: azure;
+    }
+
+    button{
+        background: none;
+        border: none;
+    }
+
+    
+    .tab-content{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height:100%;
+        padding: 10px 0 5px 0;
+    }
+
+    .page-name{
+        position: absolute; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        font-weight: bold;
+        font-size: 20px;
+    }
+</style>

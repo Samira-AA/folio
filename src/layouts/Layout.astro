@@ -1,6 +1,20 @@
 ---
 import NavBar from '../components/navbar.astro'
 import Name from '../components/presentation.astro'
+
+const currentUrl= new URL(Astro.request.url);
+
+const currentPage = currentUrl.pathname
+
+type AlignmentType = {
+    [key: string]: string;
+} 
+
+const alignment: AlignmentType = {
+    '/': 'center',
+} as const;
+
+const dynamicAlign= alignment[currentPage] || 'flex-end';
 ---
 <!doctype html>
 <html lang="en">
@@ -20,7 +34,7 @@ import Name from '../components/presentation.astro'
 				<Name></Name>
 			</div>
 			
-			<div class="content">
+			<div class="content" style={`align-items: ${dynamicAlign}`}>
 				<slot/>
 
 			</div>
