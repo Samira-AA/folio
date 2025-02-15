@@ -1,7 +1,102 @@
 ---
+import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
+
 ---
 
+<script>
+    
+let textElement = document.getElementById('mail');
+let text = textElement ? textElement.innerHTML : '';
+
+function hideElement() {
+    const copiedElement = document.getElementById('copied');
+    if (copiedElement) {
+        copiedElement.style.display = "inline";
+    }
+}
+
+textElement?.addEventListener('click', async () => {
+        try {
+            hideElement();
+            await navigator.clipboard.writeText(text);
+            console.log('Copied ');
+        } catch (err) {
+            console.error('Failed to copy ', err);
+        }
+    });
+
+</script>
 <Layout>
-    CONTACT
+    <div class="container">
+        <div class="content">
+            Want to work with me? <br>
+            Let's talk!<br>
+            <div class="clipboard">
+                <span id="mail" onmousedown='return false;' onselectstart='return false;'>samirajetzabel@gmail.com</span>
+                <span id="copied"> copied!</span>
+            </div>
+            
+            
+        </div>
+    
+        <div class="icons">
+            <a href="https://www.linkedin.com/in/samira-jaa/" target="_blank" rel="noopener noreferrer"><Icon name="linkedin-logo"></Icon></a>
+            <a href="https://github.com/Samira-AA" target="_blank" rel="noopener noreferrer"><Icon name="github-logo"></Icon></a>
+        </div>
+    </div>
+    
+    
 </Layout>
+
+
+<style>
+
+    #copied{
+        font-size: 25px;
+        color:#09CA28;
+        text-decoration: underline 1px solid;
+        text-underline-offset:2px;
+        display:none;
+    }
+
+    #mail{
+        color:#2192FF;
+        cursor: pointer;
+        display:inline;
+        -webkit-touch-callout: none; 
+        -webkit-user-select: none; 
+        user-select: none;
+    }
+
+    #mail:hover{
+        color:#7dbdf9;
+        
+    }
+
+    .container{
+        width: 100%;
+        padding: 20px;
+    }
+    .content{
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        font-size: 70px;
+        font-weight: bold;
+        
+    }
+
+    [data-icon]{
+        height: 50px;
+        width: 50px;
+        margin-right: 50px;
+    }
+
+    .icons{
+        display: flex;
+        justify-content: flex-start;
+        margin-top:50px
+    }
+
+</style>
