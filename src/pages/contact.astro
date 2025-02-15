@@ -53,7 +53,7 @@ textElement?.addEventListener('click', async () => {
 <style>
 
     #copied{
-        font-size: 25px;
+        font-size: 20px;
         color:#09CA28;
         text-decoration: underline 1px solid;
         text-underline-offset:2px;
@@ -99,4 +99,100 @@ textElement?.addEventListener('click', async () => {
         margin-top:50px
     }
 
+
+    /* 2xl: 1536px and below */
+    @media (max-width: 1535px) {
+        .container{
+            padding:0px;
+        }
+
+        .content{
+        font-size: 65px;
+        }
+    }
+
+    /* xl: 1280px and below */
+    @media (max-width: 1279px) {
+        .content{
+            font-size: 60px;
+        }
+        #mail{
+            font-size: 40px;
+        }
+
+        
+    }
+
+    /* lg: 1070px and below */
+    @media (max-width: 1069px) {
+        .clipboard{
+            display: flex;
+            flex-direction:column;
+        }
+
+        #copied{
+            margin-top: 10px;
+        }
+        
+    }
+
+
+    /* 950px and below */
+    @media (max-width: 949px) {
+        .content{
+            font-size: 55px;
+        }
+        #mail{
+            font-size: 35px;
+        }
+    }
+
+    @media (max-width: 865px) {
+        #mail{
+            font-size: 30px;
+        }
+    }
+
+    @media (max-width: 819px) {
+        #mail{
+            font-size: 25px;
+        }
+    }
+
+
+    /* md: 768px and below */
+    @media (max-width: 767px) {
+        
+        .content{
+            font-size: 40px;
+        }
+        #mail{
+            font-size: 24px;
+        }
+    }
+
+    @media (max-width: 699px) {
+        
+        .content{
+            font-size: 40px;
+        }
+        #mail{
+            font-size: 20px;
+        }
+    }
+
+    /* sm: 640px and below */
+    @media (max-width: 639px) {
+        .container{
+            padding: 15px;
+        }
+    }
+
+    /* 339px and below */
+    @media (max-width: 349px) {
+        #mail{
+            margin-top: 10px;
+            font-size: 17px;
+        }
+    }
 </style>
