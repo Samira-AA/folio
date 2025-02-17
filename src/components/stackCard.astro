@@ -9,6 +9,7 @@ interface Language {
 interface Props {
     stack: {
         title: string;
+        underlineColor: string;
         languages: Language[];
     }
 }
@@ -17,7 +18,7 @@ const { stack } = Astro.props;
 
 ---
 <div class="container">
-    <span class="title">{stack.title}</span>
+    <span class="title" style={`--underline-color: ${stack.underlineColor}`}>{stack.title}</span>
     <div class="language-container">
         {stack.languages.map((lang) => ( 
             <div class="language">
@@ -38,12 +39,18 @@ const { stack } = Astro.props;
         flex-direction: column;
         align-items: center;
         width: fit-content;
-        margin-right: 30px;
+
+    }
+
+    .language:not(:last-child){
+        
     }
 
     .language-container{
         display: flex;
         margin-top: 15px;
+        justify-content: space-around;
+        
     }
 
     [data-icon]{
@@ -51,6 +58,7 @@ const { stack } = Astro.props;
         width: 55px;
     }
     .container{
+      
         border-radius:15px;
         background-color: #191919;
         color: #fff;
@@ -75,6 +83,6 @@ const { stack } = Astro.props;
         bottom: 0px; 
         width: 115%;
         height: 10px;
-        background-color: #0055FF; 
+        background-color: var(--underline-color);
     }
 </style>

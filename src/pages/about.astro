@@ -7,6 +7,7 @@ import { Icon } from 'astro-icon/components';
 const stacks=[
     {
         title:"Front-End",
+        underlineColor: "#0055FF",
         languages:[
             {
                 icon:"html5",
@@ -41,6 +42,7 @@ const stacks=[
     },
     {
         title:"Back-End",
+        underlineColor: "#DD00B8",
         languages:[
             {
                 icon:"java",
@@ -75,6 +77,7 @@ const stacks=[
     },
     {
         title:"Other tools",
+        underlineColor: "#E40303",
         languages:[
             {
                 icon:"git",
@@ -91,7 +94,19 @@ const stacks=[
             {
                 icon:"github-logo",
                 name:"GITHUB",
-            }
+            },
+            {
+                icon:"python",
+                name:"PYTHON",
+            },
+            {
+                icon:"cplusplus",
+                name:"C++",
+            },
+            {
+                icon:"flutter",
+                name:"FLUTTER",
+            },
         ]
     }
 ];
@@ -108,11 +123,11 @@ const stacks=[
                     
                     <div class="details-card">
                         <span class="title">Email</span> 
-                        <a class="social">samirajetzabel@gmail.com</a>
+                        <a class="social" href="">samirajetzabel@gmail.com</a>
                         <span class="title">Linkedin</span>
-                        <a class="social">samira-AAJ</a>
+                        <a class="social" href="https://www.linkedin.com/in/samira-jaa/" target="_blank" rel="noopener noreferrer">samira-JAA</a>
                         <span class="title">GitHub</span>
-                        <a class="social">samira-AAJ</a>
+                        <a class="social" href="https://github.com/Samira-AA" target="_blank" rel="noopener noreferrer">samira-AA</a>
                     </div>
                 </div>
                 
@@ -209,5 +224,7 @@ const stacks=[
         margin-bottom: 20px;
         font-weight: bold;
         text-decoration: underline;
+        -webkit-touch-callout: none; 
+        -webkit-user-select: none; 
     }
 </style>
