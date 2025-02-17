@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import BrowserWindow from '../components/browserWindow.astro';
 import StackCard from '../components/stackCard.astro'
+import { Icon } from 'astro-icon/components';
 
 const stacks=[
     {
@@ -9,7 +10,87 @@ const stacks=[
         languages:[
             {
                 icon:"html5",
-                name:"HTML5"
+                name:"HTML5",
+            },
+            {
+                icon:"css3",
+                name:"CSS3",
+            },
+            {
+                icon:"javascript",
+                name:"JAVASCRIPT",
+            },
+            {
+                icon:"typescript",
+                name:"TYPESCRIPT",
+            },
+            {
+                icon:"vuejs",
+                name:"VUE.JS",
+            },
+            {
+                icon:"angularjs",
+                name:"ANGULAR.JS",
+            },
+            {
+                icon:"tailwind",
+                name:"TAILWIND",
+            },
+            
+        ]
+    },
+    {
+        title:"Back-End",
+        languages:[
+            {
+                icon:"java",
+                name:"JAVA",
+            },
+            {
+                icon:"csharp",
+                name:"C#",
+            },
+            {
+                icon:"springboot",
+                name:"SPRING BOOT",
+            },
+            {
+                icon:"dotnetcore",
+                name:".NET CORE",
+            },
+            {
+                icon:"mongodb",
+                name:"MONGODB",
+            },
+            {
+                icon:"mysql",
+                name:"MYSQL",
+            },
+            {
+                icon:"postgresql",
+                name:"POSTGRESQL",
+            },
+            
+        ] 
+    },
+    {
+        title:"Other tools",
+        languages:[
+            {
+                icon:"git",
+                name:"GIT",
+            },
+            {
+                icon:"docker",
+                name:"DOCKER",
+            },
+            {
+                icon:"figma",
+                name:"FIGMA",
+            },
+            {
+                icon:"github-logo",
+                name:"GITHUB",
             }
         ]
     }
@@ -52,8 +133,9 @@ const stacks=[
                 </span>
 
                 <div class="stack-cards">
-                   <StackCard stacks={stacks}></StackCard>
-                   
+                    {stacks.map((stack) => (
+                        <StackCard stack={stack}/>  
+                    ))}
                 </div>
             </div>
         </div>
@@ -92,7 +174,7 @@ const stacks=[
     .details-content{
         display: flex;
         flex-direction: row;
-        flex-wrap:wrap
+        /*flex-wrap:wrap*/
     }
 
     .caption{

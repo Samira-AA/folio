@@ -1,63 +1,49 @@
 ---
 import {Icon} from 'astro-icon/components';
 
-interface Language{
-    icon:String;
-    name:String;
+interface Language {
+    icon: string;
+    name: string;
 }
 
-interface Stack{
-    title:String,
-    languages: Language[];
+interface Props {
+    stack: {
+        title: string;
+        languages: Language[];
+    }
 }
 
-interface Props{
-    stacks: Stack[];
-}
-
-const {stacks} = Astro.props as Props;
-
+const { stack } = Astro.props;
 
 ---
 <div class="container">
-    {
-        stacks?.map((stack)=>(
-            <span class="title">{stack.title}</span>
-
-                <div class="stack">
-
-                 <div class="language-container">
-                    
-                    {stack.languages?.map((lang)=>( 
-                        <div class="language">
-
-                            <div class="icon">
-                            <Icon name={lang.icon}></Icon>
-                            </div>
-                            <div class="name">
-                            <span>{lang.name}</span>
-                            </div>
-                            </div>
-
-                    ))}
-                    </div>
+    <span class="title">{stack.title}</span>
+    <div class="language-container">
+        {stack.languages.map((lang) => ( 
+            <div class="language">
+                <div class="icon">
+                    <Icon name={lang.icon}></Icon>
                 </div>
-    ))}
-   
-
-    
+                <div class="name">
+                    <span>{lang.name}</span>
+                </div>
+            </div>
+        ))}
+    </div>
 </div>
 
 <style>
     .language{
-        border:1px solid blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: fit-content;
         margin-right: 30px;
     }
 
     .language-container{
         display: flex;
-        border:1px solid red;
+        margin-top: 15px;
     }
 
     [data-icon]{
@@ -66,11 +52,12 @@ const {stacks} = Astro.props as Props;
     }
     .container{
         border-radius:15px;
-        margin-bottom: 50px;
         background-color: #191919;
         color: #fff;
         font-weight: bold;
         padding: 20px;
+        white-space:nowrap;
+        margin-bottom: 20px;
     }
 
     .title {
