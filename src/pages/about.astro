@@ -2,6 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 import BrowserWindow from '../components/browserWindow.astro';
 import StackCard from '../components/stackCard.astro'
+
+const stacks=[
+    {
+        title:"Front-End",
+        languages:[
+            {
+                icon:"html5",
+                name:"HTML5"
+            }
+        ]
+    }
+];
 ---
 <Layout>
     <BrowserWindow>
@@ -40,9 +52,8 @@ import StackCard from '../components/stackCard.astro'
                 </span>
 
                 <div class="stack-cards">
-                   <StackCard></StackCard>
-                   <StackCard></StackCard>
-                   <StackCard></StackCard>
+                   <StackCard stacks={stacks}></StackCard>
+                   
                 </div>
             </div>
         </div>
@@ -81,6 +92,7 @@ import StackCard from '../components/stackCard.astro'
     .details-content{
         display: flex;
         flex-direction: row;
+        flex-wrap:wrap
     }
 
     .caption{

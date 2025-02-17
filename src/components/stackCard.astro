@@ -1,10 +1,93 @@
+---
+import {Icon} from 'astro-icon/components';
+
+interface Language{
+    icon:String;
+    name:String;
+}
+
+interface Stack{
+    title:String,
+    languages: Language[];
+}
+
+interface Props{
+    stacks: Stack[];
+}
+
+const {stacks} = Astro.props as Props;
+
+
+---
 <div class="container">
-    <p>Hola</p>
+    {
+        stacks?.map((stack)=>(
+            <span class="title">{stack.title}</span>
+
+                <div class="stack">
+
+                 <div class="language-container">
+                    
+                    {stack.languages?.map((lang)=>( 
+                        <div class="language">
+
+                            <div class="icon">
+                            <Icon name={lang.icon}></Icon>
+                            </div>
+                            <div class="name">
+                            <span>{lang.name}</span>
+                            </div>
+                            </div>
+
+                    ))}
+                    </div>
+                </div>
+    ))}
+   
+
+    
 </div>
 
 <style>
+    .language{
+        border:1px solid blue;
+        width: fit-content;
+        margin-right: 30px;
+    }
+
+    .language-container{
+        display: flex;
+        border:1px solid red;
+    }
+
+    [data-icon]{
+        height: 55px;
+        width: 55px;
+    }
     .container{
-        background-color: #191919;
+        border-radius:15px;
         margin-bottom: 50px;
+        background-color: #191919;
+        color: #fff;
+        font-weight: bold;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 18px;
+        position: relative; 
+        z-index: 1;
+        padding-left:4px ;
+    }
+
+    .title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        bottom: 0px; 
+        width: 115%;
+        height: 10px;
+        background-color: #0055FF; 
     }
 </style>
