@@ -16,62 +16,23 @@ interface Props {
 
 const { stack } = Astro.props;
 ---
-
 <div class="container">
     <span class="title" style={`--underline-color: ${stack.underlineColor}`}>{stack.title}</span>
-    <div class="carousel">
-        <button class="carousel-button left" onclick="scrollLeft(this)">
-            <Icon name="leftArrow"></Icon>
-        </button>
-        <div class="language-container">
-            {stack.languages.map((lang) => (
-                <div class="language">
-                    <div class="icon">
-                        <Icon name={lang.icon} />
-                    </div>
-                    <div class="name">
-                        <span>{lang.name}</span>
-                    </div>
+    <div class="language-container">
+        {stack.languages.map((lang) => (
+            <div class="language">
+                <div class="icon">
+                    <Icon name={lang.icon} />
                 </div>
-            ))}
-        </div>
-        <button class="carousel-button right" onclick="scrollRight(this)">
-            <Icon name="rightArrow"></Icon>
-        </button>
+                <div class="name">
+                    <span>{lang.name}</span>
+                </div>
+            </div>
+        ))}
     </div>
 </div>
 
 <style>
-    .language {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 90px; 
-        white-space:nowrap;
-        font-size: 15px;
-    }
-
-    .language-container {
-        display: flex;
-        margin-top: 15px;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        gap: 20px; 
-        scrollbar-width: none;
-        -ms-overflow-style:none;
-    }
-
-    .language-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    [data-icon] {
-        height: 55px;
-        width: 55px;
-    }
-
-   
-
     .container {
         border-radius: 15px;
         background-color: #191919;
@@ -79,6 +40,28 @@ const { stack } = Astro.props;
         font-weight: bold;
         padding: 20px;
         margin-bottom: 20px;
+    }
+
+    .language-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .language {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 90px;
+        white-space: nowrap;
+        font-size: 15px;
+    }
+
+    [data-icon] {
+        height: 55px;
+        width: 55px;
     }
 
     .title {
@@ -98,89 +81,4 @@ const { stack } = Astro.props;
         height: 10px;
         background-color: var(--underline-color);
     }
-
-    .carousel {
-        display: flex;
-        align-items: center;
-    }
-
-    .carousel-button {
-        background-color: #191919;
-        border: none;
-        cursor: pointer;
-      
-    }
-
-    [data-icon="leftArrow"], [data-icon="rightArrow"]{
-        height: 30px;
-        width: 30px;
-    }
-
-
-    /* 2xl: 1536px and below */
-    @media (max-width: 1522px) {
-        .carousel-button {
-            display: none; 
-        }
-    }
-
-    /* xl: 1280px and below */
-    @media (max-width: 1279px) {
-    }
-
-    /* lg: 1024px and below */
-    @media (max-width: 1023px) {
-    }
-
-    /* 950px and below */
-    @media (max-width: 949px) {
-        .carousel-button {
-            display: block; 
-        }
-    }
-
-    /* 860px and below */
-    @media (max-width: 859px) {
-
-        
-    }
-
-    /* md: 768px and below */
-    @media (max-width: 767px) {
-    
-    }
-
-    /* sm: 640px and below */
-    @media (max-width: 639px) {
-       
-    }
 </style>
-
-<script>
-   function initializeCarousel() {
-        const leftButtons = document.querySelectorAll('.carousel-button.left');
-        const rightButtons = document.querySelectorAll('.carousel-button.right');
-
-        leftButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const container = button.nextElementSibling as HTMLElement;
-                if (container) {
-                    const scrollAmount = container.clientWidth;
-                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                }
-            });
-        });
-
-        rightButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const container = button.previousElementSibling as HTMLElement;
-                if (container) {
-                    const scrollAmount = container.clientWidth;
-                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                }
-            });
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', initializeCarousel);
-</script>

@@ -113,7 +113,7 @@ const stacks=[
 ---
 <Layout>
     <BrowserWindow>
-        <div class="containter">
+        <div class="container">
 
             <div class="details-content">
                 <div>
@@ -123,11 +123,20 @@ const stacks=[
                     
                     <div class="details-card">
                         <span class="title">Email</span> 
-                        <a class="social" href="">samirajetzabel@gmail.com</a>
+                        <a class="social" href="">
+                            <Icon name="linkedin-logo" class=icon></Icon>
+                            <span>samirajetzabel@gmail.com</span>
+                        </a>
                         <span class="title">Linkedin</span>
-                        <a class="social" href="https://www.linkedin.com/in/samira-jaa/" target="_blank" rel="noopener noreferrer">samira-JAA</a>
+                        <a class="social" href="https://www.linkedin.com/in/samira-jaa/" target="_blank" rel="noopener noreferrer">
+                            <Icon name="github-logo" class=icon></Icon>
+                            <span>samira-JAA</span>
+                        </a>
                         <span class="title">GitHub</span>
-                        <a class="social" href="https://github.com/Samira-AA" target="_blank" rel="noopener noreferrer">samira-AA</a>
+                        <a class="social" href="https://github.com/Samira-AA" target="_blank" rel="noopener noreferrer">
+                            <Icon name="linkedin-logo" class=icon></Icon>
+                            <span>samira-AA</span>
+                        </a>
                     </div>
                 </div>
                 
@@ -148,9 +157,9 @@ const stacks=[
                 </span>
 
                 <div class="stack-cards">
-                    {stacks.map((stack) => (
+                    <!-- {stacks.map((stack) => (
                         <StackCard stack={stack}/>  
-                    ))}
+                    ))} -->
                 </div>
             </div>
         </div>
@@ -158,6 +167,10 @@ const stacks=[
 </Layout>
 
 <style>
+
+    .icon{
+        display: none;
+    }
 
     .text{
         font-weight: 300;
@@ -167,7 +180,18 @@ const stacks=[
     .about{
         display:flex;
         flex-direction: column;
-        padding: 30px 50px;
+        padding: 40px;
+    }
+
+    .details-content{
+        display: flex;
+        flex-direction: row;
+       flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .details-card, .about {
+        flex: 1; 
     }
 
     .download-button{
@@ -186,11 +210,7 @@ const stacks=[
         justify-content: flex-end;
     }
   
-    .details-content{
-        display: flex;
-        flex-direction: row;
-        flex-wrap:wrap;
-    }
+   
 
     .caption{
         display: block;
@@ -227,4 +247,65 @@ const stacks=[
         -webkit-touch-callout: none; 
         -webkit-user-select: none; 
     }
+
+    /* xl: 1280px and below */
+    @media (max-width: 1279px) {
+        .about{
+            padding: 0px;
+        }
+
+        .details-content{
+            flex-direction: column;
+        }
+
+        .details-card{
+            width: 250px;
+        }
+    }
+
+    /* lg: 1024px and below */
+    @media (max-width: 1024px) {
+        .title{
+            font-size: 15px;
+        }
+
+        .social{
+            font-size: 15px;
+        }
+
+        .text{
+            font-size: 17px;
+        }
+    }
+
+    /* 511px and below */
+    @media (max-width: 510px) {
+        .details-card span{
+            display: none;
+        }
+
+        .details-card{
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            padding: 15px;
+        }
+
+        [data-icon]{
+            height: 45px;
+            width: 45px;
+        }
+
+        .icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social{
+            margin: 0;
+        }
+    }
+
 </style>
