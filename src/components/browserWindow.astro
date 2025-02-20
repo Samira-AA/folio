@@ -6,28 +6,28 @@ const currentUrl= new URL(Astro.request.url);
 const currentPage = currentUrl.pathname
 
 type PageStyle = {
-    [key: string]: {name: string; color:string};
+    [key: string]: {name: string; backgroudColor:string; titleColor:string;};
 } 
 
 const pageStyle: PageStyle = {
-	'/about/': {name:'ABOUT ME', color:'#F56F10'},
-    '/projects/':{name:'PROJECTS', color:'#09CA28'}
+	'/about/': {name:'ABOUT ME', backgroudColor:'#F56F10', titleColor:'#FFFFFF'},
+    '/projects/':{name:'PROJECTS', backgroudColor:'#09CA28', titleColor:'#222222'}
 } as const;
 
-const { name: dynamicName, color: dynamicColor } = pageStyle[currentPage] || { name: 'ABOUT ME', color: '#09CA28' };
+const { name: dynamicName, backgroudColor: dynamicBackgroundColor, titleColor: dynamicTitleColor } = pageStyle[currentPage] || { name: 'ABOUT ME', backgroudColor: '#09CA28', titleColor:'#FFFFFF' };
 ---
 
 <div class="container">
-    <div class="tab-bar" style={`background-color: ${dynamicColor}`}>
+    <div class="tab-bar" style={`background-color: ${dynamicBackgroundColor}`}>
         <div class="tab-content">
            
             <div class="close-button">
-                <button>
-                    <Icon name="close"></Icon>
+                <button >
+                    <Icon name="close" style={`color: ${dynamicTitleColor}`}></Icon>
                 </button>
             </div>
 
-            <div class="page-name">
+            <div class="page-name" style={`color: ${dynamicTitleColor}`}>
                 <p>{dynamicName}</p>
             </div>
 
