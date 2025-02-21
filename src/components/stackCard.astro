@@ -39,44 +39,49 @@ const { stack } = Astro.props;
 
 <style>
     .container {
-        border-radius: 15px;
-        background-color: #191919;
-        color: #fff;
         font-weight: bold;
         padding: 20px;
-        margin-bottom: 20px;
     }
 
     .language-container {
         display: flex;
         flex-wrap: wrap;
         margin-top: 15px;
-        gap: 20px;
+        gap: 13px;
         width: 100%;
+        background-color: #141414;
+        padding: 20px;
+        border-radius: 8px;
     }
 
     .language {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        min-width: 90px;
         white-space: nowrap;
-        font-size: 15px;
+        gap:5px;
+        font-size: 13px;
+        background-color: #141414;
+        padding: 8px 10px;
+        color: #fff;
+        border-radius:5px;
+        border: 1px solid #515050;
     }
 
     [data-icon] {
-        height: 55px;
-        width: 55px;
+        height: 20px;
+        width: 20px;
     }
 
     .title {
         font-size: 18px;
         position: relative;
-        z-index: 1;
-        padding-left: 4px;
+        
+        text-decoration: underline 2.5px var(--underline-color) ;
+        text-underline-offset: 3px;
     }
 
     .title::after {
-        background-color: var(--underline-color);
+        background-color: ;
     }
 </style>
