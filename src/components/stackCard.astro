@@ -40,18 +40,14 @@ const { stack } = Astro.props;
 <style>
     .container {
         font-weight: bold;
-        padding: 20px;
+        padding: 10px 20px;
     }
 
     .language-container {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 15px;
+        margin: 15px 0;
         gap: 13px;
-        width: 100%;
-        background-color: #141414;
-        padding: 20px;
-        border-radius: 8px;
     }
 
     .language {
@@ -83,5 +79,33 @@ const { stack } = Astro.props;
 
     .title::after {
         background-color: ;
+    }
+
+
+     /* 2xl: 1536px and below */
+   @media (max-width: 1522px) {
+        .container {
+            padding: 10px;
+        }
+    }
+
+    /* lg: 1024px and below */
+    @media (max-width: 1023px) {
+        .container{
+            padding: 20px 0px;
+        }
+    }
+
+    /* sm: 640px and below */
+    @media (max-width: 639px) {
+        .container{
+            padding: 20px 10px;
+        }
+    }
+
+    @media (max-width: 510px) {
+        .container{
+            padding: 20px 0px;
+        }
     }
 </style>
