@@ -1,165 +1,175 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import BrowserWindow from '../components/browserWindow.astro';
-import StackCard from '../components/stackCard.astro'
-import { Icon } from 'astro-icon/components';
+import Layout from "../layouts/Layout.astro";
+import BrowserWindow from "../components/browserWindow.astro";
+import StackCard from "../components/stackCard.astro";
+import { Icon } from "astro-icon/components";
 
-const stacks=[
+const stacks = [
     {
-        title:"Front-End",
+        title: "Front-End",
         underlineColor: "#0055FF",
-        languages:[
+        languages: [
             {
-                icon:"html5",
-                name:"HTML5",
+                icon: "html5",
+                name: "HTML5",
             },
             {
-                icon:"css3",
-                name:"CSS3",
+                icon: "css3",
+                name: "CSS3",
             },
             {
-                icon:"javascript",
-                name:"JAVASCRIPT",
+                icon: "javascript",
+                name: "JAVASCRIPT",
             },
             {
-                icon:"typescript",
-                name:"TYPESCRIPT",
+                icon: "typescript",
+                name: "TYPESCRIPT",
             },
             {
-                icon:"vuejs",
-                name:"VUE.JS",
+                icon: "vuejs",
+                name: "VUE.JS",
             },
             {
-                icon:"angularjs",
-                name:"ANGULAR.JS",
+                icon: "angularjs",
+                name: "ANGULAR.JS",
             },
             {
-                icon:"tailwind",
-                name:"TAILWIND",
+                icon: "tailwind",
+                name: "TAILWIND",
             },
-            
-        ]
+        ],
     },
     {
-        title:"Back-End",
+        title: "Back-End",
         underlineColor: "#DD00B8",
-        languages:[
+        languages: [
             {
-                icon:"java",
-                name:"JAVA",
+                icon: "java",
+                name: "JAVA",
             },
             {
-                icon:"csharp",
-                name:"C#",
+                icon: "csharp",
+                name: "C#",
             },
             {
-                icon:"springboot",
-                name:"SPRING BOOT",
+                icon: "springboot",
+                name: "SPRING BOOT",
             },
             {
-                icon:"dotnetcore",
-                name:".NET CORE",
+                icon: "dotnetcore",
+                name: ".NET CORE",
             },
             {
-                icon:"mongodb",
-                name:"MONGODB",
+                icon: "mongodb",
+                name: "MONGODB",
             },
             {
-                icon:"mysql",
-                name:"MYSQL",
+                icon: "mysql",
+                name: "MYSQL",
             },
             {
-                icon:"postgresql",
-                name:"POSTGRESQL",
+                icon: "postgresql",
+                name: "POSTGRESQL",
             },
-            
-        ] 
+        ],
     },
     {
-        title:"Other tools",
+        title: "Other tools",
         underlineColor: "#E40303",
-        languages:[
+        languages: [
             {
-                icon:"git",
-                name:"GIT",
+                icon: "git",
+                name: "GIT",
             },
             {
-                icon:"docker",
-                name:"DOCKER",
+                icon: "docker",
+                name: "DOCKER",
             },
             {
-                icon:"figma",
-                name:"FIGMA",
+                icon: "figma",
+                name: "FIGMA",
             },
             {
-                icon:"github-logo",
-                name:"GITHUB",
+                icon: "github-logo",
+                name: "GITHUB",
             },
             {
-                icon:"python",
-                name:"PYTHON",
+                icon: "python",
+                name: "PYTHON",
             },
             {
-                icon:"cplusplus",
-                name:"C++",
+                icon: "cplusplus",
+                name: "C++",
             },
             {
-                icon:"flutter",
-                name:"FLUTTER",
+                icon: "flutter",
+                name: "FLUTTER",
             },
-        ]
-    }
+        ],
+    },
 ];
 ---
+
 <Layout>
     <BrowserWindow>
         <div class="container">
-
             <div class="details-content">
                 <div>
-                    <span class="caption">
-                        DETAILS
-                    </span>
-                    
+                    <span class="caption"> DETAILS </span>
+
                     <div class="details-card">
-                        <span class="title">Email</span> 
+                        <span class="title">Email</span>
                         <a class="social" href="">
-                            <Icon name="linkedin-logo" class=icon></Icon>
+                            <Icon name="linkedin-logo" class="icon" />
                             <span>samirajetzabel@gmail.com</span>
                         </a>
                         <span class="title">Linkedin</span>
-                        <a class="social" href="https://www.linkedin.com/in/samira-jaa/" target="_blank" rel="noopener noreferrer">
-                            <Icon name="github-logo" class=icon></Icon>
+                        <a
+                            class="social"
+                            href="https://www.linkedin.com/in/samira-jaa/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Icon name="github-logo" class="icon" />
                             <span>samira-JAA</span>
                         </a>
                         <span class="title">GitHub</span>
-                        <a class="social" href="https://github.com/Samira-AA" target="_blank" rel="noopener noreferrer">
-                            <Icon name="linkedin-logo" class=icon></Icon>
+                        <a
+                            class="social"
+                            href="https://github.com/Samira-AA"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Icon name="linkedin-logo" class="icon" />
                             <span>samira-AA</span>
                         </a>
                     </div>
                 </div>
-                
 
                 <div class="about">
                     <div class="text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione sed tempora repellendus nihil illum exercitationem harum at odit sunt dolor, nisi veritatis facilis saepe eius deleniti vero ducimus. Repudiandae, deleniti.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ratione sed tempora repellendus nihil illum
+                        exercitationem harum at odit sunt dolor, nisi veritatis
+                        facilis saepe eius deleniti vero ducimus. Repudiandae,
+                        deleniti.
                     </div>
                     <div class="button">
-                        <a href="/src/documents/Samira-Alvarez-CV-en.pdf" download> <button class="download-button">Download CV</button> </a>
+                        <a
+                            href="/src/documents/Samira-Alvarez-CV-en.pdf"
+                            download
+                        >
+                            <button class="download-button">Download CV</button>
+                        </a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="stack-content">
-                <span class="caption">
-                    STACK
-                </span>
+                <span class="caption"> STACK </span>
 
                 <div class="stack-cards">
-                    <!-- {stacks.map((stack) => (
-                        <StackCard stack={stack}/>  
-                    ))} -->
+                    {stacks.map((stack) => <StackCard stack={stack} />)}
                 </div>
             </div>
         </div>
@@ -167,65 +177,62 @@ const stacks=[
 </Layout>
 
 <style>
-
-    .icon{
+    .icon {
         display: none;
     }
 
-    .text{
+    .text {
         font-weight: 300;
         font-size: 18px;
     }
 
-    .about{
-        display:flex;
+    .about {
+        display: flex;
         flex-direction: column;
         padding: 40px;
     }
 
-    .details-content{
+    .details-content {
         display: flex;
         flex-direction: row;
-       flex-wrap: wrap;
+        flex-wrap: wrap;
         gap: 20px;
     }
 
-    .details-card, .about {
-        flex: 1; 
+    .details-card,
+    .about {
+        flex: 1;
     }
 
-    .download-button{
-        color:#fff;
-        padding:15px 25px;
-        border-radius:15px;
-        font-size:18px;
-        cursor:pointer;
+    .download-button {
+        color: #fff;
+        padding: 15px 25px;
+        border-radius: 15px;
+        font-size: 18px;
+        cursor: pointer;
         background-color: #191919;
         border: 0;
         margin-top: 20px;
     }
 
-    .button{
-        display:flex;
+    .button {
+        display: flex;
         justify-content: flex-end;
     }
-  
-   
 
-    .caption{
+    .caption {
         display: block;
         margin-top: 25px;
         margin-bottom: 10px;
         font-weight: 800;
         font-size: 18px;
-        
     }
-    .container{
+    .container {
         height: 100%;
         width: 100%;
     }
 
-    .details-card{
+    .details-card {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -235,56 +242,56 @@ const stacks=[
         color: #fff;
     }
 
-    .title{
+    .title {
         font-size: 18px;
         margin-bottom: 8px;
     }
 
-    .social{
+    .social {
         margin-bottom: 20px;
         font-weight: bold;
         text-decoration: underline;
-        -webkit-touch-callout: none; 
-        -webkit-user-select: none; 
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
     }
 
     /* xl: 1280px and below */
     @media (max-width: 1279px) {
-        .about{
+        .about {
             padding: 0px;
         }
 
-        .details-content{
+        .details-content {
             flex-direction: column;
         }
 
-        .details-card{
+        .details-card {
             width: 250px;
         }
     }
 
     /* lg: 1024px and below */
     @media (max-width: 1024px) {
-        .title{
+        .title {
             font-size: 15px;
         }
 
-        .social{
+        .social {
             font-size: 15px;
         }
 
-        .text{
+        .text {
             font-size: 17px;
         }
     }
 
     /* 511px and below */
     @media (max-width: 510px) {
-        .details-card span{
+        .details-card span {
             display: none;
         }
 
-        .details-card{
+        .details-card {
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
@@ -292,20 +299,19 @@ const stacks=[
             padding: 15px;
         }
 
-        [data-icon]{
+        [data-icon] {
             height: 45px;
             width: 45px;
         }
 
-        .icon{
+        .icon {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .social{
+        .social {
             margin: 0;
         }
     }
-
 </style>

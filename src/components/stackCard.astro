@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 
 interface Language {
     icon: string;
@@ -16,19 +16,24 @@ interface Props {
 
 const { stack } = Astro.props;
 ---
+
 <div class="container">
-    <span class="title" style={`--underline-color: ${stack.underlineColor}`}>{stack.title}</span>
+    <span class="title" style={`--underline-color: ${stack.underlineColor}`}
+        >{stack.title}</span
+    >
     <div class="language-container">
-        {stack.languages.map((lang) => (
-            <div class="language">
-                <div class="icon">
-                    <Icon name={lang.icon} />
+        {
+            stack.languages.map((lang) => (
+                <div class="language">
+                    <div class="icon">
+                        <Icon name={lang.icon} />
+                    </div>
+                    <div class="name">
+                        <span>{lang.name}</span>
+                    </div>
                 </div>
-                <div class="name">
-                    <span>{lang.name}</span>
-                </div>
-            </div>
-        ))}
+            ))
+        }
     </div>
 </div>
 
@@ -72,13 +77,6 @@ const { stack } = Astro.props;
     }
 
     .title::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        z-index: -1;
-        bottom: 0px;
-        width: 115%;
-        height: 10px;
         background-color: var(--underline-color);
     }
 </style>

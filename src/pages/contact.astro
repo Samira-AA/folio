@@ -1,196 +1,189 @@
 ---
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
-
 ---
 
 <script>
-    
-let textElement = document.getElementById('mail');
-let text = textElement ? textElement.innerHTML : '';
+    let textElement = document.getElementById("mail");
+    let text = textElement ? textElement.innerHTML : "";
 
-function hideElement() {
-    const copiedElement = document.getElementById('copied');
-    if (copiedElement) {
-        copiedElement.style.display = "inline";
+    function hideElement() {
+        const copiedElement = document.getElementById("copied");
+        if (copiedElement) {
+            copiedElement.style.display = "inline";
+        }
     }
-}
 
-textElement?.addEventListener('click', async () => {
+    textElement?.addEventListener("click", async () => {
         try {
             hideElement();
             await navigator.clipboard.writeText(text);
-            console.log('Copied ');
+            console.log("Copied ");
         } catch (err) {
-            console.error('Failed to copy ', err);
+            console.error("Failed to copy ", err);
         }
     });
-
 </script>
 <Layout>
     <div class="container">
         <div class="content">
-            Want to work with me? <br>
-            Let's talk!<br>
+            Want to work with me? <br />
+            Let's talk!<br />
             <div class="clipboard">
-                <span id="mail" onmousedown='return false;' onselectstart='return false;'>samirajetzabel@gmail.com</span>
+                <span
+                    id="mail"
+                    onmousedown="return false;"
+                    onselectstart="return false;">samirajetzabel@gmail.com</span
+                >
                 <span id="copied"> copied!</span>
             </div>
-            
-            
         </div>
-    
+
         <div class="icons">
-            <a href="https://www.linkedin.com/in/samira-jaa/" target="_blank" rel="noopener noreferrer"><Icon name="linkedin-logo"></Icon></a>
-            <a href="https://github.com/Samira-AA" target="_blank" rel="noopener noreferrer"><Icon name="github-logo"></Icon></a>
+            <a
+                href="https://www.linkedin.com/in/samira-jaa/"
+                target="_blank"
+                rel="noopener noreferrer"><Icon name="linkedin-logo" /></a
+            >
+            <a
+                href="https://github.com/Samira-AA"
+                target="_blank"
+                rel="noopener noreferrer"><Icon name="github-logo" /></a
+            >
         </div>
     </div>
-    
-    
 </Layout>
 
-
 <style>
-
-    #copied{
+    #copied {
         font-size: 20px;
-        color:#09CA28;
+        color: #09ca28;
         text-decoration: underline 1px solid;
-        text-underline-offset:2px;
-        display:none;
+        text-underline-offset: 2px;
+        display: none;
     }
 
-    #mail{
-        color:#2192FF;
+    #mail {
+        color: #2192ff;
         cursor: pointer;
-        display:inline;
-        -webkit-touch-callout: none; 
-        -webkit-user-select: none; 
+        display: inline;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
         user-select: none;
     }
 
-    #mail:hover{
-        color:#7dbdf9;
-        
+    #mail:hover {
+        color: #7dbdf9;
     }
 
-    .container{
+    .container {
         width: 100%;
         padding: 20px;
     }
-    .content{
+    .content {
         align-items: flex-start;
         display: flex;
         flex-direction: column;
         font-size: 70px;
         font-weight: bold;
-        
     }
 
-    [data-icon]{
+    [data-icon] {
         height: 50px;
         width: 50px;
         margin-right: 50px;
     }
 
-    .icons{
+    .icons {
         display: flex;
         justify-content: flex-start;
-        margin-top:50px
+        margin-top: 50px;
     }
-
 
     /* 2xl: 1536px and below */
     @media (max-width: 1535px) {
-        .container{
-            padding:0px;
+        .container {
+            padding: 0px;
         }
 
-        .content{
-        font-size: 65px;
+        .content {
+            font-size: 65px;
         }
     }
 
     /* xl: 1280px and below */
     @media (max-width: 1279px) {
-        .content{
+        .content {
             font-size: 60px;
         }
-        #mail{
+        #mail {
             font-size: 40px;
         }
-
-        
     }
 
     /* lg: 1070px and below */
     @media (max-width: 1069px) {
-        .clipboard{
+        .clipboard {
             display: flex;
-            flex-direction:column;
+            flex-direction: column;
         }
 
-        #copied{
+        #copied {
             margin-top: 10px;
         }
-        
     }
-
 
     /* 950px and below */
     @media (max-width: 949px) {
-        .content{
+        .content {
             font-size: 55px;
         }
-        #mail{
+        #mail {
             font-size: 35px;
         }
     }
 
     @media (max-width: 865px) {
-        #mail{
+        #mail {
             font-size: 30px;
         }
     }
 
     @media (max-width: 819px) {
-        #mail{
+        #mail {
             font-size: 25px;
         }
     }
 
-
     /* md: 768px and below */
     @media (max-width: 767px) {
-        
-        .content{
+        .content {
             font-size: 40px;
         }
-        #mail{
+        #mail {
             font-size: 24px;
         }
     }
 
     @media (max-width: 699px) {
-        
-        .content{
+        .content {
             font-size: 40px;
         }
-        #mail{
+        #mail {
             font-size: 20px;
         }
     }
 
     /* sm: 640px and below */
     @media (max-width: 639px) {
-        .container{
+        .container {
             padding: 25px;
         }
     }
 
     /* 339px and below */
     @media (max-width: 349px) {
-        #mail{
+        #mail {
             margin-top: 10px;
             font-size: 17px;
         }

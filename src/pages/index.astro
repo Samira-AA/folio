@@ -1,164 +1,154 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
     <div class="content">
+        <p>
+            Hola! I’m a <span class="stack">FullStack</span> developer based in Lima.
+            <a href="/about/"><span class="more-info">Read more</span></a>
+        </p>
 
-        <p>Hola! I’m  a <span class="stack">FullStack</span> developer based in Lima. <a href="/about/"><span class="more-info">Read more</span></a> </p>
-            
-      
         <div class="buttons">
-            <a href="/contact/"> <button class="contact-button">Contact Me</button> </a>
-           
-            <a href="/src/documents/Samira-Alvarez-CV-en.pdf" download> <button class="download-button">Download CV</button> </a>
-           
+            <a href="/contact/">
+                <button class="contact-button">Contact Me</button>
+            </a>
+
+            <a href="/src/documents/Samira-Alvarez-CV-en.pdf" download>
+                <button class="download-button">Download CV</button>
+            </a>
         </div>
-        
     </div>
-	
 </Layout>
 
-<style >
-   
-   
-    .more-info{
+<style>
+    .more-info {
         font-size: 20px;
         font-weight: 300;
-        text-decoration:underline 0.5px #FD6900;
-        text-underline-offset:2px;
-        cursor:pointer;
-        white-space:nowrap;
-        
+        text-decoration: underline 0.5px #fd6900;
+        text-underline-offset: 2px;
+        cursor: pointer;
+        white-space: nowrap;
     }
 
-    .content{
+    .content {
         padding: 20px;
-        display:flex;
+        display: flex;
         align-items: flex-start;
         flex-direction: column;
-       
     }
 
-    .content p{
+    .content p {
         font-size: 70px;
         font-weight: bold;
     }
-    
-    .stack{
-        color:#10EA33;
+
+    .stack {
+        color: #10ea33;
     }
 
-    .buttons{
+    .buttons {
         margin-top: 60px;
     }
 
-    button{
-        color:#fff;
-        padding:18px 40px;
-        border-radius:15px;
-        font-size:20px;
-        cursor:pointer;
+    button {
+        color: #fff;
+        padding: 18px 40px;
+        border-radius: 15px;
+        font-size: 20px;
+        cursor: pointer;
     }
 
-    .contact-button{
-        background-color: #0269F4;
+    .contact-button {
+        background-color: #0269f4;
         border: 0;
-        margin-right:50px;
+        margin-right: 50px;
     }
 
-    .download-button{
-        background-color: #E900FF;
+    .download-button {
+        background-color: #e900ff;
         border: 0;
     }
-    
 
     /* 2xl: 1536px and below */
-   @media (max-width: 1522px) {
-        .more-info{
-           display: flex;
-           margin-top: 20px;
-            
+    @media (max-width: 1522px) {
+        .more-info {
+            display: flex;
+            margin-top: 20px;
         }
     }
 
     /* xl: 1280px and below */
     @media (max-width: 1279px) {
-        .content p{
+        .content p {
             font-size: 45px;
             font-weight: bold;
         }
 
-        .content{
+        .content {
             padding: 15px;
         }
     }
 
     /* lg: 1024px and below */
     @media (max-width: 1023px) {
-        
     }
 
     /* 950px and below */
     @media (max-width: 949px) {
-        .content p{
+        .content p {
             font-size: 40px;
             font-weight: bold;
         }
 
-        .content{
+        .content {
             padding: 15px;
         }
 
-        button{
+        button {
             flex-wrap: wrap;
-            color:#fff;
-            padding:18px 40px;
-            border-radius:15px;
-            font-size:15px;
-            cursor:pointer;
+            color: #fff;
+            padding: 18px 40px;
+            border-radius: 15px;
+            font-size: 15px;
+            cursor: pointer;
         }
     }
 
     /* 860px and below */
     @media (max-width: 859px) {
-
-        .buttons{
+        .buttons {
             display: flex;
             flex-wrap: wrap;
         }
 
-        button{
+        button {
             display: flex;
             justify-content: center;
-            color:#fff;
+            color: #fff;
             width: 150px;
-            white-space:nowrap;
-            border-radius:15px;
-            font-size:15px;
-            cursor:pointer;
+            white-space: nowrap;
+            border-radius: 15px;
+            font-size: 15px;
+            cursor: pointer;
             margin-bottom: 20px;
         }
     }
 
     /* md: 768px and below */
     @media (max-width: 767px) {
-    
     }
 
     /* sm: 640px and below */
     @media (max-width: 639px) {
-        .content{
+        .content {
             padding: 25px;
         }
-        .content p{
+        .content p {
             font-size: 30px;
-            
         }
-    
-       
-        button{
+
+        button {
             padding: 15px;
             font-size: 15px;
         }
