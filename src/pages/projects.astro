@@ -2,9 +2,30 @@
 import BrowserWindow from "../components/browserWindow.astro";
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/projectCard.astro"
+
+const projects=[
+    {
+        title:"ArtCollab",
+        description:"An Artist-led platform fostering creativity and connection.",
+        aboutUrl:'',
+        launchUrl:'',
+        cardBackgroundColor:"#0740B3",
+        buttonBackgroundColor: "#173572",
+        buttonHoverColor:"#112448",
+        iconColor:"#2E6995",
+        landingImage:'',
+        appImage:''
+    }
+]
 ---
 <Layout>
     <BrowserWindow>
-        <ProjectCard>
+        <div class="projects-container">
+            {projects.map((project)=>
+            <ProjectCard project={project}/>
+        )}
+            
+        </div>
+        
     </BrowserWindow>
 </Layout>

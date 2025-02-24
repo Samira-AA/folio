@@ -1,21 +1,41 @@
 ---
 import { Icon } from "astro-icon/components";
----
-<div class="card-container">
-    <div class="text">
-        <p class="title">ArtCollab</p>
-        <p class="description">An Artist-led platform fostering creativity and connection. </p>
 
-        <div class="buttons">
-            <button> 
+
+
+interface Props{
+    project:{
+        title:String;
+        description:String;
+        aboutUrl:String;
+        launchUrl:String; 
+        cardBackgroundColor:String;
+        buttonBackgroundColor: String;
+        buttonHoverColor:String; 
+        iconColor:String;
+        landingImage:String;
+        appImage:String; 
+    };
+}
+
+const { project }= Astro.props;
+---
+<div class="card-container" style={`--cardBackgroundColor: ${project.cardBackgroundColor}`}>
+    <div class="text">
+    
+        <p class="title">{project.title}</p>
+        <p class="description">{project.description} </p>
+
+        <div class="buttons" style={`--buttonBackgroundColor: ${project.buttonBackgroundColor}`}>
+            <button style={`--buttonHoverColor:${project.buttonHoverColor}`}> 
                 <a href="" target="_blank" rel="noopener noreferrer">
-                    <Icon name="about-icon"></Icon> ABOUT
+                    <Icon name="about-icon" style={`--iconColor:${project.iconColor}`}></Icon> ABOUT
                 </a>
                 
             </button>
-            <button> 
+            <button style={`--buttonHoverColor:${project.buttonHoverColor}`}> 
                 <a href="" target="_blank" rel="noopener noreferrer">
-                    <Icon name="launch-icon"></Icon> LAUNCH
+                    <Icon name="launch-icon" style={`--iconColor:${project.iconColor}`}></Icon> LAUNCH
                 </a>
                 
             </button>
@@ -66,7 +86,7 @@ img{
 }
 
 .card-container{
-    background-color: #0740B3;
+    background-color: var(--cardBackgroundColor); /*#0740B3 */
     color: #fff;
     height:18rem;
     display: flex;
@@ -88,7 +108,7 @@ a{
     gap:10px;
 }
 button{
-    background-color: #173572;
+    background-color: var(--buttonBackgroundColor) ; 
     border:0;
     color: #fff;
     font-weight: bold;
@@ -97,7 +117,7 @@ button{
 }
 
 button:hover{
-    background-color: #112448;
+    background-color: var(--buttonHoverColor) ; 
 }
 
 .buttons{
@@ -109,6 +129,7 @@ button:hover{
 [data-icon] {
     height: 25px;
     width: 25px;
+    color: var(--iconColor);
 }
 
 .text{
