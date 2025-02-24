@@ -4,7 +4,7 @@ import { Icon } from "astro-icon/components";
 <div class="card-container">
     <div class="text">
         <p class="title">ArtCollab</p>
-        <p class="description">A creative platform by artists, for artists, fostering inspiration, collaboration, and community. </p>
+        <p class="description">An Artist-led platform fostering creativity and connection. </p>
 
         <div class="buttons">
             <button> 
@@ -18,7 +18,7 @@ import { Icon } from "astro-icon/components";
 
     <div class="images">
         <img class="landing-page-image" src="/src/images/artCollabLandingPage.PNG">
-        <!-- <img class="web-page" src="/src/images/artCollabLandingPage.PNG">  --> 
+        <img class="web-app-image" src="/src/images/artCollabWebApp.PNG"> 
     </div>
    
 </div>
@@ -26,19 +26,28 @@ import { Icon } from "astro-icon/components";
 <style>
 
 .description{
-    width: 50%;
+    width: 55%;
+    margin-bottom: 10px;
+}
+
+.web-app-image{
+    position: absolute;
+    margin: 0;
+    top:20px;
+    right:100px;
+    margin-top: 10px;
 }
 
 .landing-page-image{
     position: absolute;
     bottom: 0;
     margin: 0;
-    right: 0;
-    filter: drop-shadow(-10px 0px 4px rgba(0, 0, 0, 0.25));
-    
+    right: -10px; 
 }
+
 img{
     height: 230px;
+    filter: drop-shadow(-10px 0px 4px rgba(0, 0, 0, 0.25));
 }
 
 .card-container{
@@ -49,6 +58,7 @@ img{
     align-items: center;
     border-radius: 20px;
     position: relative;
+    overflow: hidden;
 }
 
 .title{
