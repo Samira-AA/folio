@@ -6,15 +6,42 @@ import ProjectCard from "../components/projectCard.astro"
 const projects=[
     {
         title:"ArtCollab",
+        titleFontSize:'55px',
         description:"An Artist-led platform fostering creativity and connection.",
         aboutUrl:'',
-        launchUrl:'',
+        launchUrl:'https://art-collab-landing-page.vercel.app/',
         cardBackgroundColor:"#0740B3",
         buttonBackgroundColor: "#173572",
         buttonHoverColor:"#112448",
         iconColor:"#2E6995",
-        landingImage:'',
-        appImage:''
+        landingImage:'/src/images/artCollabLandingPage.PNG',
+        appImage:'/src/images/artCollabWebApp.PNG'
+    },
+    {
+        title:"WebMaster",
+        titleFontSize:'47px',
+        description:"A network linking businesses and developers for digital growth.",
+        aboutUrl:'',
+        launchUrl:'https://fromzerolanding.netlify.app/',
+        cardBackgroundColor:"#E40303",
+        buttonBackgroundColor: "#930000",
+        buttonHoverColor:"#660000",
+        iconColor:"#C62828",
+        landingImage:'/src/images/webMasterLandingPage.PNG',
+        appImage:'/src/images/webMasterWebApp.PNG'
+    },
+    {
+        title:"FactuManager",
+        titleFontSize:'35px',
+        description:"A solution for tracking and valuing your financial notes.",
+        aboutUrl:'',
+        launchUrl:'',
+        cardBackgroundColor:"#EFB036",
+        buttonBackgroundColor: "#DD9C1E",
+        buttonHoverColor:"#BF871A",
+        iconColor:"#FFB320",
+        landingImage:'/src/images/factuManagerWebApp1.PNG',
+        appImage:'/src/images/factuManagerWebApp.PNG'
     }
 ]
 ---
@@ -29,3 +56,9 @@ const projects=[
         
     </BrowserWindow>
 </Layout>
+
+<style>
+    .projects-container{
+        margin:40px 0;
+    }
+</style>

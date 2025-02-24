@@ -1,129 +1,93 @@
 ---
 import { Icon } from "astro-icon/components";
 
-
-
 interface Props{
     project:{
-        title:String;
-        description:String;
-        aboutUrl:String;
-        launchUrl:String; 
-        cardBackgroundColor:String;
-        buttonBackgroundColor: String;
-        buttonHoverColor:String; 
-        iconColor:String;
-        landingImage:String;
-        appImage:String; 
+        title:string;
+        titleFontSize: string;
+        description:string;
+        aboutUrl:string;
+        launchUrl:string; 
+        cardBackgroundColor:string;
+        buttonBackgroundColor: string;
+        buttonHoverColor:string; 
+        iconColor:string;
+        landingImage:string;
+        appImage:string; 
     };
 }
 
 const { project }= Astro.props;
 ---
-<div class="card-container" style={`--cardBackgroundColor: ${project.cardBackgroundColor}`}>
+<div class="card-container" style={`--cardBackgroundColor: ${project.cardBackgroundColor}; --titleFontSize: ${project.titleFontSize}; --buttonBackgroundColor: ${project.buttonBackgroundColor}; --buttonHoverColor: ${project.buttonHoverColor}; --iconColor: ${project.iconColor}`}>
     <div class="text">
-    
         <p class="title">{project.title}</p>
-        <p class="description">{project.description} </p>
+        <p class="description">{project.description}</p>
 
-        <div class="buttons" style={`--buttonBackgroundColor: ${project.buttonBackgroundColor}`}>
-            <button style={`--buttonHoverColor:${project.buttonHoverColor}`}> 
-                <a href="" target="_blank" rel="noopener noreferrer">
-                    <Icon name="about-icon" style={`--iconColor:${project.iconColor}`}></Icon> ABOUT
+        <div class="buttons">
+            <button>
+                <a href={project.aboutUrl} target="_blank" rel="noopener noreferrer">
+                    <Icon name="about-icon"></Icon> ABOUT
                 </a>
-                
             </button>
-            <button style={`--buttonHoverColor:${project.buttonHoverColor}`}> 
-                <a href="" target="_blank" rel="noopener noreferrer">
-                    <Icon name="launch-icon" style={`--iconColor:${project.iconColor}`}></Icon> LAUNCH
+            <button>
+                <a href={project.launchUrl} target="_blank" rel="noopener noreferrer">
+                    <Icon name="launch-icon"></Icon> LAUNCH
                 </a>
-                
             </button>
         </div>
     </div>
 
     <div class="images">
-        <img class="landing-page-image" src="/src/images/artCollabLandingPage.PNG">
-        <img class="web-app-image" src="/src/images/artCollabWebApp.PNG"> 
+        <img class="landing-page-image" src={project.landingImage} alt="Landing Page">
+        <img class="web-app-image" src={project.appImage} alt="Web App">
     </div>
-   
 </div>
 
 <style>
-
-.description{
-    width: 55%;
-    margin-bottom: 10px;
-}
-
-.web-app-image{
-    position: absolute;
-    margin: 0;
-    top:10px;
-    right:100px;
-    margin-top: 10px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-    transform: translateY(50px);
-}
-
-.card-container:hover .web-app-image{
-    opacity: 1;
-    transform: translateY(0);
-    
-}
-
-
-.landing-page-image{
-    position: absolute;
-    bottom: 0;
-    right: -10px; 
-}
-
-img{
-    height: 83%;
-    filter: drop-shadow(-10px 0px 4px rgba(0, 0, 0, 0.25));
-}
-
-.card-container{
-    background-color: var(--cardBackgroundColor); /*#0740B3 */
+.card-container {
+    background-color: var(--cardBackgroundColor);
     color: #fff;
-    height:18rem;
+    height: 18rem;
     display: flex;
     align-items: center;
-    border-radius: 20px 20px 0 20px;
+    border-radius: 20px;
     position: relative;
     overflow: hidden;
+    margin-bottom: 50px;
 }
 
-.title{
+.title {
     font-weight: bold;
-    font-size: 55px;
+    font-size: var(--titleFontSize); 
+}
+
+button {
+    background-color: var(--buttonBackgroundColor);
+    border: 0;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--buttonHoverColor);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
 }
 
 a{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:10px;
-}
-button{
-    background-color: var(--buttonBackgroundColor) ; 
-    border:0;
-    color: #fff;
-    font-weight: bold;
-    padding: 8px;
-    border-radius: 5px;
-}
-
-button:hover{
-    background-color: var(--buttonHoverColor) ; 
-}
-
-.buttons{
-    display:flex;
-    flex-direction:row;
-    gap: 25px;
+    gap: 10px;
 }
 
 [data-icon] {
@@ -132,11 +96,44 @@ button:hover{
     color: var(--iconColor);
 }
 
-.text{
+.text {
     display: flex;
     flex-direction: column;
-    padding:30px;
-    margin:30px 20px;
-    gap:20px;
+    padding: 30px;
+    margin: 30px 20px;
+    gap: 20px;
+}
+
+.description {
+    width: 55%;
+    margin-bottom: 10px;
+}
+
+.web-app-image {
+    position: absolute;
+    margin: 0;
+    top: 10px;
+    right: 100px;
+    margin-top: 10px;
+    opacity: 0;
+    filter: drop-shadow(-10px 0px 4px rgba(0, 0, 0, 0.25));
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+    transform: translateY(50px);
+}
+
+.card-container:hover .web-app-image {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.landing-page-image {
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    filter: drop-shadow(-10px 0px 4px rgba(0, 0, 0, 0.25));
+}
+
+img {
+    height: 83%;
 }
 </style>
