@@ -99,7 +99,7 @@ const { name: dynamicName, backgroudColor: dynamicBackgroundColor, titleColor: d
     /* 2xl: 1536px and below */
    @media (max-width: 1522px) {
         .container{
-            width: 85%;
+            width: 95%;
         }
     }
 
@@ -109,9 +109,17 @@ const { name: dynamicName, backgroudColor: dynamicBackgroundColor, titleColor: d
     }
 
     /* lg: 1024px and below */
-    @media (max-width: 1023px) {
+    @media (max-width: 1024px) {
         .container{
             width: 100%;
+        }
+        .content-layout{
+            height: 100%;
+            width: 100%;
+            background-color: whitesmoke;
+            overflow-y: scroll;
+            color: black;
+            padding: 10px 30px;
         }
     }
 
