@@ -11,7 +11,7 @@ type PageStyle = {
 
 const pageStyle: PageStyle = {
 	'/about/': {name:'ABOUT ME', backgroudColor:'#F56F10', titleColor:'#FFFFFF'},
-    '/projects/':{name:'PROJECTS', backgroudColor:'#09CA28', titleColor:'#222222'}
+    '/projects/':{name:'PROJECTS', backgroudColor:'#09CA28', titleColor:'#222222'},
 } as const;
 
 const { name: dynamicName, backgroudColor: dynamicBackgroundColor, titleColor: dynamicTitleColor } = pageStyle[currentPage] || { name: 'ABOUT ME', backgroudColor: '#09CA28', titleColor:'#FFFFFF' };
