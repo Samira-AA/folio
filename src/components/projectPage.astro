@@ -1,4 +1,7 @@
 ---
+import { Icon } from "astro-icon/components";
+import StackCard from "./stackCard.astro";
+
 
 ---
 <div class="title">
@@ -7,46 +10,184 @@
 </div>
 
 <div class="text-container">
+    <div class="text">
+
+    </div>
     <div class="information">
         <div class="rol-container">
             <span> MY ROL</span>
             <div class="rol">
-                <p>Front-end developer</p>
-                <p>Back-end developer</p>
+                <p>Front-end dev</p>
+                <p>Back-end dev</p>
             </div>
             
         </div>
     
         <div class="tools-container">
             <span> TOOLS</span>
+            <p>Typescript</p>
+            <p>Tailwind</p>
+            <p>Angular</p>
+            <p>Java</p>
+            <p>SpringBoot</p>
         </div>
         
     </div>
     <div class="description">
         <span> DESCRIPTION</span>
         <div class="description-text">
-            Un proyecto hecho por artistas, para artistas. Colabora y crea nuevos  proyectos y transforma tu hobby en un trabajo o revisa nuestro amplio  catálogo de libros y de artistas.
+            <p>Un proyecto hecho por artistas, para artistas. Colabora y crea nuevos  proyectos y transforma tu hobby en un trabajo o revisa nuestro amplio  catálogo de libros y de artistas.</p>
+            <p>Un proyecto hecho por artistas, para artistas. Colabora y crea nuevos  proyectos y transforma tu hobby en un trabajo o revisa nuestro amplio  catálogo de libros y de artistas.</p>
+            <p>Un proyecto hecho por artistas, para artistas. Colabora y crea nuevos  proyectos y transforma tu hobby en un trabajo o revisa nuestro amplio  catálogo de libros y de artistas.</p>
         </div>
         <div class="buttons">
             <button>
-                WEB APP
+                <a href="">
+                    <Icon name="launch-project-icon"></Icon>
+                    WEB APP
+                </a>
+                
             </button>
+
             <button>
-                LANDING PAGE
+                <a href="">
+                    <Icon name="launch-project-icon"></Icon>
+                    LANDING PAGE
+                </a>
             </button>
         </div>
     </div>
+    
+    
 </div>
-
+<div class="images-container">
+    
+    <div class="left-container">
+        <div class="app-name">
+            <img class="logo" src="/src/images/artCollabLogo.png">
+            <p>ArtCollab</p>
+        </div>
+        <div class="simple-image">
+            <img src="/src/images/artCollabWebAppComplete.png" width="250px">
+    
+        </div>
+    </div>
+    
+    <div class="scroll-image">
+       <img src="/src/images/artCollabLongerCapture.png"> 
+    </div>
+</div>
 
 <style>
 
-   
-    .rol-container{
-        margin-bottom: 15px;
-        white-space: nowrap;
+    .left-container{
+        width: 38%;
+    }
+    .app-name{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap:10px;
+        border:1px solid #222222;
+        border-radius: 10px;
+        padding: 5px 20px;
+        margin-bottom: 20px;
+
     }
 
+    .app-name p{
+        font-size: 50px;
+        font-weight: bold;
+        color: #222222;
+    }
+
+   .logo{
+        height: 40px;
+        
+   }
+    .images-container{
+        display: flex;
+        justify-content: end;
+        flex-direction: row;
+        margin: 50px 0;
+        gap:20px;
+    }
+
+    .scroll-image img{
+        width: 250px;
+    }
+    .scroll-image{
+        background-color: white;
+        height:500px;
+        border:1px solid #222222;
+        padding:20px;
+        overflow-y: scroll;
+        border-radius: 30px 0 0 30px;
+    }
+
+    .simple-image{
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: center;
+        border:1px solid #222222;
+        padding:20px;
+        border-radius: 30px;
+        height: 200px;
+        
+    }
+
+    .simple-image img {
+        width: 265px;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(20%);
+        
+        
+    }
+
+    .simple-image:hover img {
+        transform: translateY(-1%); 
+    }
+
+  
+
+    [data-icon] {
+        height: 20px;
+        width: 20px;
+    }
+
+   button{
+        background-color: transparent;
+        border:1px solid #222222;
+        font-weight: bold;
+        font-size: 15px;
+        cursor: pointer;
+        padding: 8px 5px;
+        border-radius: 5px;
+   }
+
+   .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        padding: 10px 0;
+    }
+
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .rol-container{
+        margin-bottom: 15px;
+       
+    }
+
+    
     span{
         color: #222222;
         font-weight: bold;
@@ -57,17 +198,26 @@
     .text-container{
         display: flex;
         flex-direction: row;
-        border:1px solid rgb(0, 255, 4);
+        margin-top: 20px;
     }
 
     .information{
-        border:1px solid red;
         width: 25%;
     }
     .description{
-        border:1px solid red;
         width: 100%;
+        padding: 0px 10px;
     }
+
+    .description-text{
+        padding: 10px 0;
+    }
+
+    p{
+        font-weight: 300;
+        font-size: 18px;
+    }
+
     .project-title{
         color:#222222;
         font-size: 50px;

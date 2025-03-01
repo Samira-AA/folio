@@ -14,7 +14,7 @@ const pageStyle: PageStyle = {
     '/projects/':{name:'PROJECTS', backgroudColor:'#09CA28', titleColor:'#222222'},
 } as const;
 
-const { name: dynamicName, backgroudColor: dynamicBackgroundColor, titleColor: dynamicTitleColor } = pageStyle[currentPage] || { name: 'ABOUT ME', backgroudColor: '#09CA28', titleColor:'#FFFFFF' };
+const { name: dynamicName, backgroudColor: dynamicBackgroundColor, titleColor: dynamicTitleColor } = pageStyle[currentPage] || { name: 'ABOUT ME', backgroudColor: '#0269F4', titleColor:'#FFFFFF' };
 ---
 
 <div class="container">
@@ -62,7 +62,7 @@ const { name: dynamicName, backgroudColor: dynamicBackgroundColor, titleColor: d
     .content-layout{
         height: 100%;
         width: 100%;
-        background-color: whitesmoke;
+        background-color: #F2F2F2;
         overflow-y: scroll;
         color: black;
         padding: 10px 40px;
