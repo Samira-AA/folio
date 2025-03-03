@@ -1,0 +1,48 @@
+---
+import type { GetStaticPaths } from "astro";
+import BrowserWindow from "../../components/browserWindow.astro";
+import Layout from "../../layouts/Layout.astro";
+import ProjectPage from "../../components/projectPage.astro";
+
+export const getStaticPaths = (() => {
+    const projects = {
+        "art-collab": {
+            title: "ArtCollab",
+            description: "Un proyecto hecho por artistas, para artistas. Colabora y crea nuevos proyectos y transforma tu hobby en un trabajo o revisa nuestro amplio catálogo de libros y de artistas.",
+            webAppUrl: "https://venerable-pika-0539b1.netlify.app/home",
+            landingPageUrl: "https://art-collab-landing-page.vercel.app/",
+            roles: ["Front-end dev", "Back-end dev"],
+            tools: ["Typescript", "Tailwind", "Angular", "Java", "SpringBoot"],
+        },
+        "web-master": {
+            title: "WebMaster",
+            description: "Un proyecto hecho por artistas, para artistas. Colabora y crea nuevos proyectos y transforma tu hobby en un trabajo o revisa nuestro amplio catálogo de libros y de artistas.",
+            webAppUrl: "https://venerable-pika-0539b1.netlify.app/home",
+            landingPageUrl: "https://art-collab-landing-page.vercel.app/",
+            roles: ["Front-end dev", "Back-end dev"],
+            tools: ["Typescript", "Tailwind", "Angular", "Java", "SpringBoot"],
+        },
+        "factu-manager": {
+            title: "FactuManager",
+            description: "Un proyecto hecho por artistas, para artistas. Colabora y crea nuevos proyectos y transforma tu hobby en un trabajo o revisa nuestro amplio catálogo de libros y de artistas.",
+            webAppUrl: "https://venerable-pika-0539b1.netlify.app/home",
+            landingPageUrl: "https://art-collab-landing-page.vercel.app/",
+            roles: ["Front-end dev", "Back-end dev"],
+            tools: ["Typescript", "Tailwind", "Angular", "Java", "SpringBoot"],
+        },
+    };
+
+    return Object.keys(projects).map((project) => ({
+        params: { project },
+        props: { projectData: projects[project as keyof typeof projects] },
+    }));
+}) satisfies GetStaticPaths;
+
+const { projectData } = Astro.props;
+---
+
+<Layout>
+    <BrowserWindow>
+        <ProjectPage project={projectData}></ProjectLayout>
+    </BrowserWindow>
+</Layout>

@@ -2,10 +2,21 @@
 import { Icon } from "astro-icon/components";
 import StackCard from "./stackCard.astro";
 
+interface Props{
+    project:{
+        title:string;
+        description:string;
+        webAppUrl:string;
+        landingPageUrl:string;
+        roles:string[];
+        tools: string[];
+    }
+}
 
+const {project} = Astro.props;
 ---
 <div class="project-header">
-    <h2 class="project-title">ArtCollab</h2>
+    <h2 class="project-title">{project.title}</h2>
     <hr>
 </div>
 
@@ -17,32 +28,30 @@ import StackCard from "./stackCard.astro";
         <div class="project-rol">
             <span> MY ROL</span>
             <div class="rol-list">
-                <p>Front-end dev</p>
-                <p>Back-end dev</p>
+                {project.roles.map((role) =>(
+                    <p>{role}</p>
+                ))}
             </div>
             
         </div>
     
         <div class="project-tools">
             <span> TOOLS</span>
-            <p>Typescript</p>
-            <p>Tailwind</p>
-            <p>Angular</p>
-            <p>Java</p>
-            <p>SpringBoot</p>
+            {project.tools.map((tool => 
+                <p>{tool}</p>
+            ))}
+       
         </div>
         
     </div>
     <div class="project-description">
         <span> DESCRIPTION</span>
         <div class="project-description-text">
-            <p>Un proyecto hecho por artistas, para artistas. Colabora y crea nuevos  proyectos y transforma tu hobby en un trabajo o revisa nuestro amplio  catálogo de libros y de artistas.</p>
-            <p>Un proyecto hecho por artistas, para artistas. Colabora y crea nuevos  proyectos y transforma tu hobby en un trabajo o revisa nuestro amplio  catálogo de libros y de artistas.</p>
-            <p>Un proyecto hecho por artistas, para artistas. Colabora y crea nuevos  proyectos y transforma tu hobby en un trabajo o revisa nuestro amplio  catálogo de libros y de artistas.</p>
+            <p>{project.description}</p>
         </div>
         <div class="buttons">
             <button>
-                <a href="https://venerable-pika-0539b1.netlify.app/home" target="_blank" rel="noopener noreferrer">
+                <a href="{project.webAppUrl}" target="_blank" rel="noopener noreferrer">
                     <Icon name="launch-project-icon"></Icon>
                     WEB APP
                 </a>
@@ -50,7 +59,7 @@ import StackCard from "./stackCard.astro";
             </button>
 
             <button>
-                <a href="https://art-collab-landing-page.vercel.app/"  target="_blank" rel="noopener noreferrer">
+                <a href="{project.landingPageUrl}"  target="_blank" rel="noopener noreferrer">
                     <Icon name="launch-project-icon"></Icon>
                     LANDING PAGE
                 </a>
