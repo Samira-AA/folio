@@ -135,7 +135,7 @@ const {project} = Astro.props;
 
     .project-description {
         width: 100%;
-        padding: 0 10px;
+        padding: 0 20px;
     }
 
     .project-description-text {
@@ -177,12 +177,14 @@ const {project} = Astro.props;
         font-size: 20px;
         padding-bottom: 5px;
         display: inline-block;
+        white-space: nowrap;
     }
 
     .project-gallery {
         display: flex;
         justify-content: end;
         flex-direction: row;
+        flex-wrap: wrap;
         margin: 50px 0;
         gap: 20px;
     }
@@ -242,5 +244,100 @@ const {project} = Astro.props;
     [data-icon] {
         height: 20px;
         width: 20px;
+    }
+
+    /* 2xl: 1536px and below */
+   @media (max-width: 1522px) {
+        .app-name p{
+                font-size: 40px;
+            }
+    }
+
+
+    /* lg: 1024px and below */
+    @media (max-width: 1025px) {
+        .app-name p{
+            font-size: 25px;
+        }
+
+        .project-image{
+            height: 150px;
+        }
+
+        
+    }
+
+    @media (max-width: 1068px) {
+        .project-gallery{
+            justify-content: center;
+        }
+
+        .left-container{
+            width: 70%;
+        }
+    }
+
+    /* 880px and below */
+    @media (max-width: 879px) {
+        .buttons{
+            flex-direction: column;
+            gap:15px;
+            width: 95%;
+        }
+        
+    }
+
+    /* md: 768px and below */
+    @media (max-width: 768px) {
+        .text-container{
+            flex-wrap: wrap;
+        }
+
+        .project-details{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 50px;
+            padding:10px;
+        }
+
+        .project-description{
+            margin-top:10px;
+            padding: 10px;
+        }
+
+        .project-gallery{
+            justify-content: center;
+        }
+
+        button{
+            white-space: nowrap;
+        }
+
+        
+    }
+
+    /* sm: 640px and below */
+    @media (max-width: 639px) {
+        h2{
+            font-size: 1.2em;
+        }
+
+        
+    }
+
+    @media (max-width: 376px) {
+        .left-container{
+            width: 100%;
+        }
+
+        h2{
+            font-size: 1em;
+        }
+
+        a{
+            justify-content: flex-start;
+            gap:10px;
+        }
     }
 </style>
