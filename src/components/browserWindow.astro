@@ -25,9 +25,12 @@ const { name: dynamicName, backgroudColor: dynamicBackgroundColor, titleColor: d
         <div class="tab-content">
            
             <div class="close-button">
-                <button >
-                    <Icon name="close" style={`color: ${dynamicTitleColor}`}></Icon>
-                </button>
+                <a href="/">
+                    <button >
+                        <Icon name="close" style={`color: ${dynamicTitleColor}`}></Icon>
+                    </button>
+                </a>
+                
             </div>
 
             <div class="page-name" style={`color: ${dynamicTitleColor}`}>
@@ -80,6 +83,7 @@ const { name: dynamicName, backgroudColor: dynamicBackgroundColor, titleColor: d
     button{
         background: none;
         border: none;
+        cursor: pointer;
     }
 
     
