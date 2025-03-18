@@ -7,5 +7,5 @@ import icon from 'astro-icon';
 export default defineConfig({
   integrations: [icon()],
   site: 'https://samira-aa.github.io',
-  base: '',
+  base: '/folio/',
 });
