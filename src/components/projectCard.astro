@@ -152,9 +152,11 @@ const { project }= Astro.props;
             padding: 10px;
         }
     }
+    
 
     /* 860px and below */
     @media (max-width: 859px) {
+        
         .card-container {
             flex-direction: column;
             height: auto;
@@ -199,38 +201,6 @@ const { project }= Astro.props;
 
     /* sm: 640px and below */
     @media (max-width: 639px) {
-        .card-container {
-            flex-direction: row;
-            height: 18rem;
-        }
-
-        .images {
-            order: 3;
-            align-items: stretch;
-        }
-
-        .text {
-            order: 1;
-            width: 100%;
-            margin: 20px;
-            padding: 20px;
-        }
-
-        .buttons {
-            order: 2;
-        }
-
-        .web-app-image {
-            animation: none;
-        }
-
-        .landing-page-image {
-            animation: none;
-        }
-    }
-
-    /* sm: 570px and below */
-    @media (max-width: 569px) {
         .card-container {
             flex-direction: column;
             height: auto;
