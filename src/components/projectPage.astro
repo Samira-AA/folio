@@ -9,6 +9,7 @@ interface Props {
         description: string;
         webAppUrl: string;
         landingPageUrl: string;
+        repositoryUrl:string;
         roles: string[];
         tools: string[];
         logoSrc: string;
@@ -60,6 +61,13 @@ const { project } = Astro.props;
                 <a href={project.landingPageUrl} target="_blank" rel="noopener noreferrer">
                     <Icon name="launch-project-icon"></Icon>
                     LANDING PAGE
+                </a>
+            </button>
+
+            <button>
+                <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">
+                    <Icon name="launch-project-icon"></Icon>
+                    REPOSITORY
                 </a>
             </button>
         </div>
@@ -144,6 +152,8 @@ const { project } = Astro.props;
     .buttons {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        white-space: none;
         gap: 25px;
         padding: 10px 0;
     }
