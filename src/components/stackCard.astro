@@ -55,30 +55,36 @@ const { stack } = Astro.props;
         flex-direction: row;
         align-items: center;
         white-space: nowrap;
-        gap:5px;
+        gap: 5px;
         font-size: 13px;
         background-color: #141414;
         padding: 8px 10px;
         color: #fff;
-        border-radius:5px;
+        border-radius: 5px;
         border: 1px solid #515050;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+    }
+
+    .language:hover {
+        transform: scale(1.05); 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
 
     [data-icon] {
         height: 20px;
         width: 20px;
+        transition: transform 0.3s ease; 
     }
 
     .title {
         font-size: 18px;
-        position: relative;      
-        text-decoration: underline 2.5px var(--underline-color) ;
+        position: relative;
+        text-decoration: underline 2.5px var(--underline-color);
         text-underline-offset: 3px;
     }
 
-
-     /* 2xl: 1536px and below */
-   @media (max-width: 1522px) {
+    /* 2xl: 1536px and below */
+    @media (max-width: 1522px) {
         .container {
             padding: 10px;
         }
@@ -86,20 +92,20 @@ const { stack } = Astro.props;
 
     /* lg: 1024px and below */
     @media (max-width: 1023px) {
-        .container{
+        .container {
             padding: 20px 0px;
         }
     }
 
     /* sm: 640px and below */
     @media (max-width: 639px) {
-        .container{
+        .container {
             padding: 20px 10px;
         }
     }
 
     @media (max-width: 510px) {
-        .container{
+        .container {
             padding: 20px 0px;
         }
     }
