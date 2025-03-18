@@ -4,12 +4,12 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
     <div class="content">
-        <p>
+        <p class="fade-in-up">
             Hola! I’m a <span class="stack">FullStack</span> developer based in Lima.
             <a href="/about/"><span class="more-info">Read more</span></a>
         </p>
 
-        <div class="buttons">
+        <div class="buttons fade-in-up">
             <a href="/contact/">
                 <button class="contact-button">Contact Me</button>
             </a>
@@ -22,6 +22,7 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
+    
     .more-info {
         font-size: 20px;
         font-weight: 300;
@@ -79,7 +80,6 @@ import Layout from "../layouts/Layout.astro";
     .download-button:hover{
         background-color: #ad00c0;
     }
-
 
     /* 2xl: 1536px and below */
     @media (max-width: 1522px) {
@@ -164,4 +164,27 @@ import Layout from "../layouts/Layout.astro";
             font-size: 15px;
         }
     }
+
+
+    .fade-in-up {
+        opacity: 0; 
+        animation: fadeInUp 1s ease-out forwards;
+    }
+
+   
+    .buttons.fade-in-up {
+        animation-delay: 0.5s; 
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
 </style>

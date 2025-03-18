@@ -24,8 +24,9 @@ import Layout from "../layouts/Layout.astro";
         }
     });
 </script>
+
 <Layout>
-    <div class="container">
+    <div class="container fade-down">
         <div class="content">
             Want to work with me? <br />
             Let's talk!<br />
@@ -39,7 +40,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </div>
 
-        <div class="icons">
+        <div class="icons fade-down-delay">
             <a
                 href="https://www.linkedin.com/in/samira-jaa/"
                 target="_blank"
@@ -55,12 +56,39 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
+    
+    .fade-down {
+        opacity: 0; 
+        animation: fadeDown 1s ease-out forwards; 
+    }
+
+    
+    .fade-down-delay {
+        opacity: 0; 
+        animation: fadeDown 1s ease-out 0.5s forwards; 
+    }
+
     #copied {
         font-size: 20px;
         color: #09ca28;
         text-decoration: underline 1px solid;
         text-underline-offset: 2px;
         display: none;
+    }
+
+    .fade-out {
+        animation: fadeOut 0.5s ease-out forwards;
+    }
+
+    @keyframes fadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px); 
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0); 
+        }
     }
 
     #mail {
@@ -81,6 +109,7 @@ import Layout from "../layouts/Layout.astro";
         width: 100%;
         padding: 20px;
     }
+
     .content {
         align-items: flex-start;
         display: flex;
