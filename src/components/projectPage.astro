@@ -77,13 +77,12 @@ const { project } = Astro.props;
 <div class="project-gallery">
     <div class="left-container">
         <div class="app-name">
-            <Image class="logo" src={project.logoSrc} alt="Logo" width={45}
-            height={40}></Image>
+            <Image class="logo" src={project.logoSrc} alt="Logo" width={45} height={40} loading=eager></Image>
 
             <p class={project.appName === 'FactuManager' ? 'small-font' : ''}>{project.appName}</p>
         </div>
         <div class="project-image container">
-            <Image src={project.webAppImageSrc} alt="Web App Image" width={250} height={300}>
+            <Image src={project.webAppImageSrc} alt="Web App Image" width={250} height={300}  loading=eager>
         </div>
     </div>
 
