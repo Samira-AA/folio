@@ -3,7 +3,7 @@ import {Icon} from 'astro-icon/components';
 
 
 const currentUrl= new URL(Astro.request.url);
-const currentPage = currentUrl.pathname
+let currentPage = currentUrl.pathname
 
 type PageStyle = {
     [key: string]: {name: string; backgroudColor:string; titleColor:string;};
@@ -12,12 +12,17 @@ type PageStyle = {
 const pageStyle: PageStyle = {
 	'/about/': {name:'ABOUT ME', backgroudColor:'#F56F10', titleColor:'#FFFFFF'},
     '/projects/':{name:'PROJECTS', backgroudColor:'#09CA28', titleColor:'#222222'},
-    '/projects/art-collab':{name:'ARTCOLLAB', backgroudColor:'#0269F4', titleColor:'#E5D7B6'},
-    '/projects/web-master':{name:'WEBMASTER', backgroudColor:'#F42202', titleColor:'#E5D7B6'},
-    '/projects/factu-manager':{name:'FACTUMANAGER', backgroudColor:'#F49B02', titleColor:'#E5D7B6'},
+    '/projects/art-collab/':{name:'ARTCOLLAB', backgroudColor:'#0269F4', titleColor:'#E5D7B6'},
+    '/projects/web-master/':{name:'WEBMASTER', backgroudColor:'#F42202', titleColor:'#E5D7B6'},
+    '/projects/factu-manager/':{name:'FACTUMANAGER', backgroudColor:'#F49B02', titleColor:'#E5D7B6'},
 } as const;
 
+
+
 const { name: dynamicName, backgroudColor: dynamicBackgroundColor, titleColor: dynamicTitleColor } = pageStyle[currentPage] || { name: 'ABOUT ME', backgroudColor: '#0269F4', titleColor:'#FFFFFF' };
+
+console.log('Current Page:', currentPage);
+
 ---
 
 <div class="container fade-in">
