@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import StackCard from "./stackCard.astro";
+import Image from "astro/components/Image.astro";
 
 interface Props {
     project: {
@@ -76,16 +77,18 @@ const { project } = Astro.props;
 <div class="project-gallery">
     <div class="left-container">
         <div class="app-name">
-            <img class="logo" src={project.logoSrc} alt="Logo">
+            <Image class="logo" src={project.logoSrc} alt="Logo" width={45}
+            height={40}></Image>
+
             <p class={project.appName === 'FactuManager' ? 'small-font' : ''}>{project.appName}</p>
         </div>
         <div class="project-image container">
-            <img src={project.webAppImageSrc} alt="Web App Image" width="250px">
+            <Image src={project.webAppImageSrc} alt="Web App Image" width={250} height={300}>
         </div>
     </div>
 
     <div class="project-scroll-image">
-        <img src={project.scrollImageSrc} alt="Scroll Image">
+        <img src={project.scrollImageSrc} alt="Scroll Image" >
     </div>
 </div>
 

@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import Image from "astro/components/Image.astro";
 
 interface Props{
     project:{
@@ -39,8 +40,23 @@ const { project }= Astro.props;
     </div>
 
     <div class="images">
-        <img class="landing-page-image" src={project.landingImage} alt="Landing Page">
-        <img class="web-app-image" src={project.appImage} alt="Web App">
+        <Image
+            class="landing-page-image"
+            src={project.landingImage}
+            alt="Landing Page"
+            width={800}
+            height={600}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            loading="eager"
+        />
+        <Image
+            class="web-app-image"
+            src={project.appImage}
+            alt="Web App"
+            width={430}
+            height={200}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+        />
     </div>
 </div>
 
