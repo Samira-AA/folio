@@ -35,7 +35,7 @@ const dynamicAlign= alignment[currentPage] || 'flex-end';
 				<Name></Name>
 			</div>
 			
-			<div class="content" style={`align-items: ${dynamicAlign}`}>
+			<div class="content" style={`align-items: ${dynamicAlign} !important`}>
 				<slot/>
 
 			</div>
@@ -122,7 +122,6 @@ const dynamicAlign= alignment[currentPage] || 'flex-end';
 		grid-area:content;
 		display:flex;
         justify-content: center;
-        align-items: center;
 	}
 	
 	.name{
