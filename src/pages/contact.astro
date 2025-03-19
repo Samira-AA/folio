@@ -34,6 +34,9 @@ import Layout from "../layouts/Layout.astro";
                 <span
                     id="mail"
                     onmousedown="return false;"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Click to copy email address samirajetzabel@gmail.com"
                     onselectstart="return false;">samirajetzabel@gmail.com</span
                 >
                 <span id="copied"> copied!</span>
@@ -44,12 +47,14 @@ import Layout from "../layouts/Layout.astro";
             <a
                 href="https://www.linkedin.com/in/samira-jaa/"
                 target="_blank"
-                rel="noopener noreferrer"><Icon name="linkedin-logo" /></a
+                rel="noopener noreferrer"><Icon name="linkedin-logo" 
+                aria-label="Samira's Linkedin profile"/></a
             >
             <a
                 href="https://github.com/Samira-AA"
                 target="_blank"
-                rel="noopener noreferrer"><Icon name="github-logo" /></a
+                rel="noopener noreferrer"><Icon name="github-logo" 
+                aria-label="Samira's GitHub profile"/></a
             >
         </div>
     </div>

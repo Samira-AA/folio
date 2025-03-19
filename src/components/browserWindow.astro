@@ -20,9 +20,6 @@ const pageStyle: PageStyle = {
 
 
 const { name: dynamicName, backgroudColor: dynamicBackgroundColor, titleColor: dynamicTitleColor } = pageStyle[currentPage] || { name: 'ABOUT ME', backgroudColor: '#0269F4', titleColor:'#FFFFFF' };
-
-console.log('Current Page:', currentPage);
-
 ---
 
 <div class="container fade-in">
@@ -30,8 +27,8 @@ console.log('Current Page:', currentPage);
         <div class="tab-content">
            
             <div class="close-button">
-                <a href="/">
-                    <button >
+                <a href="/" aria-label="Close and return to the homepage">
+                    <button aria-label="Close">
                         <Icon name="close" style={`color: ${dynamicTitleColor}`}></Icon>
                     </button>
                 </a>

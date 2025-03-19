@@ -51,21 +51,21 @@ const { project } = Astro.props;
             <p>{project.description}</p>
         </div>
         <div class="buttons">
-            <button>
+            <button aria-label="Open Web App">
                 <a href={project.webAppUrl} target="_blank" rel="noopener noreferrer">
                     <Icon name="launch-project-icon"></Icon>
                     WEB APP
                 </a>
             </button>
 
-            <button>
+            <button aria-label="Open Landing Page">
                 <a href={project.landingPageUrl} target="_blank" rel="noopener noreferrer">
                     <Icon name="launch-project-icon"></Icon>
                     LANDING PAGE
                 </a>
             </button>
 
-            <button>
+            <button aria-label="Open Repository">
                 <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">
                     <Icon name="launch-project-icon"></Icon>
                     REPOSITORY
@@ -77,17 +77,31 @@ const { project } = Astro.props;
 <div class="project-gallery">
     <div class="left-container">
         <div class="app-name">
-            <Image class="logo" src={project.logoSrc} alt="Logo" width={45} height={40} loading=eager></Image>
+            <Image 
+            class="logo" 
+            alt={`Logo of the application ${project.appName}`} 
+            src={project.logoSrc} 
+            width={45} 
+            height={40} loading=eager 
+            aria-label={`Logo of the application ${project.appName}`}  ></Image>
 
             <p class={project.appName === 'FactuManager' ? 'small-font' : ''}>{project.appName}</p>
         </div>
         <div class="project-image container">
-            <Image src={project.webAppImageSrc} alt="Web App Image" width={250} height={300}  loading=eager>
+            <Image 
+            src={project.webAppImageSrc} 
+            alt={`Screenshot of the ${project.appName} web application`} 
+            width={250} 
+            height={300} 
+            loading=eager 
+            aria-label={`Screenshot of the ${project.appName} web application`}></Image>
         </div>
     </div>
 
     <div class="project-scroll-image">
-        <img src={project.scrollImageSrc} alt="Scroll Image" >
+        <img src={project.scrollImageSrc}
+            alt={`Scrollable image of the ${project.appName} application`} 
+            aria-label={`Scrollable image of the ${project.appName} application`}  >
     </div>
 </div>
 

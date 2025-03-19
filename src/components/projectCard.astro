@@ -26,12 +26,12 @@ const { project }= Astro.props;
         <p class="description">{project.description}</p>
 
         <div class="buttons">
-            <button>
+            <button aria-label={`Learn more about ${project.title}`}>
                 <a href={project.aboutUrl} rel="noopener noreferrer">
                     <Icon name="about-icon"></Icon> ABOUT
                 </a>
             </button>
-            <button>
+            <button aria-label={`Launch ${project.title}`}>
                 <a href={project.launchUrl} target="_blank" rel="noopener noreferrer">
                     <Icon name="launch-icon"></Icon> LAUNCH
                 </a>
@@ -43,7 +43,8 @@ const { project }= Astro.props;
         <Image
             class="landing-page-image"
             src={project.landingImage}
-            alt="Landing Page"
+            alt={`Landing page image for ${project.title}`}
+            aria-label={`Landing page image for ${project.title}`}
             width={800}
             height={600}
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -52,7 +53,8 @@ const { project }= Astro.props;
         <Image
             class="web-app-image"
             src={project.appImage}
-            alt="Web App"
+            alt={`Web app image for ${project.title}`}
+            aria-label={`Web app image for ${project.title}`}
             width={430}
             height={200}
             sizes="(max-width: 1024px) 100vw, 50vw"
