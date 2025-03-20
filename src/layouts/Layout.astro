@@ -126,8 +126,40 @@ const dynamicAlign= alignment[currentPage] || 'flex-end';
 		
 	}
 
-	/* sm: 640px and below */
-    @media (max-width: 639px) {
+
+	.space{
+		grid-area: space;
+	}
+
+	.menu{
+		grid-area: menu;
+	}
+
+	.content{
+		grid-area:content;
+		display:flex;
+        justify-content: center;
+		overflow: hidden;
+	}
+	
+	.name{
+		grid-area: name;
+		
+	}
+
+	a,
+	a:link,
+	a:visited,
+	a:hover,
+	a:active {
+		color: inherit;
+		text-decoration: inherit;
+		font-weight: inherit;	
+		}
+
+
+		/* sm: 640px and below */
+		@media (max-width: 639px) {
 		
 		html{
 			overflow:scroll;
@@ -152,33 +184,4 @@ const dynamicAlign= alignment[currentPage] || 'flex-end';
 		}
 		
 	}
-
-	.space{
-		grid-area: space;
-	}
-
-	.menu{
-		grid-area: menu;
-	}
-
-	.content{
-		grid-area:content;
-		display:flex;
-        justify-content: center;
-	}
-	
-	.name{
-		grid-area: name;
-		
-	}
-
-	a,
-	a:link,
-	a:visited,
-	a:hover,
-	a:active {
-		color: inherit;
-		text-decoration: inherit;
-		font-weight: inherit;	
-		}
 </style>
